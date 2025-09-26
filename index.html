@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Porprov Kalimantan Selatan 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+      body { font-family: 'Inter', sans-serif; box-sizing: border-box; }
+      .gradient-bg { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%); }
+      .card-hover { transition: all 0.3s ease; }
+      .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15); }
+      .tab-active { background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; }
+      .medal-gold { background: linear-gradient(135deg, #fbbf24, #f59e0b); }
+      .medal-silver { background: linear-gradient(135deg, #9ca3af, #6b7280); }
+      .medal-bronze { background: linear-gradient(135deg, #d97706, #92400e); }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-blue-900">
+  <!-- Header -->
+  <header class="gradient-bg text-white shadow-lg">
+    <div class="container mx-auto px-4 py-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center ring-2 ring-white/20">
+            <span class="text-2xl">🏆</span>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold">KONI KABUPATEN TAPIN</h1>
+            <p class="text-blue-100 mt-1">📅 1–14 November 2025</p>
+            <p class="text-blue-100">Pekan Olahraga Provinsi Kalimantan Selatan</p>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center space-x-4">
+          <span id="today-date" class="text-sm">🗓️ </span>
+          <span class="text-sm">📍 Pelaihari, Tanah Laut</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="bg-white shadow-sm sticky top-0 z-40">
+    <div class="container mx-auto px-4">
+      <div class="flex overflow-x-auto">
+        <button onclick="showTab('jadwal')" id="tab-jadwal" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap">
+          📅 Jadwal
+        </button>
+        <button onclick="showTab('berita')" id="tab-berita" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap tab-active">
+          📰 Berita
+        </button>
+        <button onclick="showTab('medali')" id="tab-medali" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap">
+          🥇 Medali
+        </button>
+        <button onclick="showTab('layanan')" id="tab-layanan" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap">
+          ℹ️ Info & Layanan
+        </button>
+        <button onclick="showTab('venue')" id="tab-venue" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap">
+          🏟️ Venue
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8">
+    <!-- Berita Tab -->
+    <div id="content-berita" class="tab-content">
+      <div class="mb-6">
+        <h2 class="text-3xl font-bold text-white mb-2">Berita Terkini</h2>
+        <p class="text-blue-100">Update terbaru seputar Porprov Kalsel 2025</p>
+      </div>
+
+      <!-- Social Media Section -->
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-white mb-4">Media Sosial Porprov</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Instagram Embed -->
+          <div class="bg-white rounded-lg shadow-md p-4 card-hover">
+            <div class="flex items-center mb-3">
+              <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-3">
+                <span class="text-white text-sm">📷</span>
+              </div>
+              <h4 class="font-bold text-gray-800">Instagram</h4>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4 mb-3">
+              <div class="flex items-center mb-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-2">
+                  <span class="text-white text-xs">🏆</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-sm">@porprovkalsel2025</p>
+                  <p class="text-xs text-gray-500">2 jam lalu</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-700 mb-2">🏊‍♂️ Atlet renang Tapin meraih medali emas! Prestasi membanggakan di hari kedua Porprov Kalsel 2025 💪</p>
+              <div class="bg-gradient-to-r from-blue-400 to-cyan-400 h-32 rounded flex items-center justify-center">
+                <span class="text-white text-2xl">🏊‍♂️</span>
+              </div>
+              <div class="flex items-center justify-between mt-2 text-xs text-gray-500">
+                <span>❤️ 1,234 suka</span>
+                <span>💬 89 komentar</span>
+              </div>
+            </div>
+            <a href="https://instagram.com/porprovkalsel2025" target="_blank" rel="noopener noreferrer" class="block w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-2 rounded-lg text-sm font-medium hover:opacity-90">
+              Lihat di Instagram
+            </a>
+          </div>
+
+          <!-- Facebook Embed -->
+          <div class="bg-white rounded-lg shadow-md p-4 card-hover">
+            <div class="flex items-center mb-3">
+              <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                <span class="text-white text-sm">📘</span>
+              </div>
+              <h4 class="font-bold text-gray-800">Facebook</h4>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4 mb-3">
+              <div class="flex items-center mb-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-2">
+                  <span class="text-white text-xs">🏆</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-sm">KONI Kabupaten Tapin</p>
+                  <p class="text-xs text-gray-500">4 jam lalu</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-700 mb-2">⚽ Final sepak bola putra berlangsung sengit! Banjarmasin vs Banjarbaru berakhir imbang 2-2. Lanjut ke adu penalti! 🔥</p>
+              <div class="bg-gradient-to-r from-green-400 to-emerald-400 h-32 rounded flex items-center justify-center">
+                <span class="text-white text-2xl">⚽</span>
+              </div>
+              <div class="flex items-center justify-between mt-2 text-xs text-gray-500">
+                <span>👍 892 suka</span>
+                <span>💬 156 komentar</span>
+              </div>
+            </div>
+            <a href="https://facebook.com/konitapin" target="_blank" rel="noopener noreferrer" class="block w-full bg-blue-600 text-white text-center py-2 rounded-lg text-sm font-medium hover:bg-blue-700">
+              Lihat di Facebook
+            </a>
+          </div>
+
+          <!-- YouTube Embed -->
+          <div class="bg-white rounded-lg shadow-md p-4 card-hover">
+            <div class="flex items-center mb-3">
+              <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center mr-3">
+                <span class="text-white text-sm">📺</span>
+              </div>
+              <h4 class="font-bold text-gray-800">YouTube</h4>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4 mb-3">
+              <div class="flex items-center mb-2">
+                <div class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-2">
+                  <span class="text-white text-xs">🏆</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-sm">Porprov Kalsel TV</p>
+                  <p class="text-xs text-gray-500">1 hari lalu</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-700 mb-2">🎥 Highlights Upacara Pembukaan Porprov Kalsel 2025 - Kemeriahan di Stadion Demang Lehman</p>
+              <div class="bg-gradient-to-r from-red-400 to-pink-400 h-32 rounded flex items-center justify-center relative">
+                <span class="text-white text-2xl">▶️</span>
+                <div class="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                  15:42
+                </div>
+              </div>
+              <div class="flex items-center justify-between mt-2 text-xs text-gray-500">
+                <span>👁️ 15,678 views</span>
+                <span>👍 567 suka</span>
+              </div>
+            </div>
+            <a href="https://youtube.com/@porprovkalsel2025" target="_blank" rel="noopener noreferrer" class="block w-full bg-red-600 text-white text-center py-2 rounded-lg text-sm font-medium hover:bg-red-700">
+              Tonton di YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <article class="bg-white rounded-lg shadow-md card-hover overflow-hidden">
+          <div class="h-40 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+            <span class="text-6xl">🏊‍♂️</span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs text-blue-600 font-semibold">RENANG</span>
+            <h3 class="text-lg font-bold mt-2 mb-3">Tim Renang Banjarmasin Raih 5 Medali Emas</h3>
+            <p class="text-gray-600 text-sm mb-4">Prestasi gemilang tim renang Banjarmasin yang berhasil meraih 5 medali emas pada hari pertama...</p>
+            <div class="flex justify-between items-center text-sm">
+              <span class="text-xs text-gray-500">2 jam lalu</span>
+              <button class="text-blue-600 font-medium hover:underline read-more" data-title="Tim Renang Banjarmasin">Baca Selengkapnya</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-lg shadow-md card-hover overflow-hidden">
+          <div class="h-40 bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center">
+            <span class="text-6xl">⚽</span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs text-green-600 font-semibold">SEPAK BOLA</span>
+            <h3 class="text-lg font-bold mt-2 mb-3">Final Sepak Bola Putra Berlangsung Sengit</h3>
+            <p class="text-gray-600 text-sm mb-4">Pertandingan final sepak bola putra antara Banjarmasin vs Banjarbaru berakhir dengan skor...</p>
+            <div class="flex justify-between items-center text-sm">
+              <span class="text-xs text-gray-500">5 jam lalu</span>
+              <button class="text-blue-600 font-medium hover:underline read-more" data-title="Final Sepak Bola Putra">Baca Selengkapnya</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-lg shadow-md card-hover overflow-hidden">
+          <div class="h-40 bg-gradient-to-r from-red-500 to-pink-600 flex items-center justify-center">
+            <span class="text-6xl">🏃‍♀️</span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs text-red-600 font-semibold">ATLETIK</span>
+            <h3 class="text-lg font-bold mt-2 mb-3">Rekor Baru Lari 100m Putri Dipecahkan</h3>
+            <p class="text-gray-600 text-sm mb-4">Atlet muda dari Tapin berhasil memecahkan rekor lari 100m putri dengan catatan waktu...</p>
+            <div class="flex justify-between items-center text-sm">
+              <span class="text-xs text-gray-500">1 hari lalu</span>
+              <button class="text-blue-600 font-medium hover:underline read-more" data-title="Rekor Lari 100m Putri">Baca Selengkapnya</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Medali Tab -->
+    <div id="content-medali" class="tab-content hidden">
+      <div class="mb-6">
+        <h2 class="text-3xl font-bold text-white mb-2">Perolehan Medali</h2>
+        <p class="text-blue-100">Klasemen sementara perolehan medali per kabupaten/kota</p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead class="gradient-bg text-white">
+              <tr>
+                <th class="px-6 py-4 text-left">Peringkat</th>
+                <th class="px-6 py-4 text-left">Kabupaten/Kota</th>
+                <th class="px-6 py-4 text-center">🥇 Emas</th>
+                <th class="px-6 py-4 text-center">🥈 Perak</th>
+                <th class="px-6 py-4 text-center">🥉 Perunggu</th>
+                <th class="px-6 py-4 text-center">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 1 -->
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 font-bold text-yellow-600">1</td>
+                <td class="px-6 py-4 font-semibold">Banjarmasin</td>
+                <td class="px-6 py-4 text-center"><span class="medal-gold text-white px-3 py-1 rounded-full text-sm font-bold">15</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-silver text-white px-3 py-1 rounded-full text-sm font-bold">12</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-bronze text-white px-3 py-1 rounded-full text-sm font-bold">8</span></td>
+                <td class="px-6 py-4 text-center font-bold text-lg">35</td>
+              </tr>
+              <!-- 2 -->
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 font-bold text-gray-600">2</td>
+                <td class="px-6 py-4 font-semibold">Banjarbaru</td>
+                <td class="px-6 py-4 text-center"><span class="medal-gold text-white px-3 py-1 rounded-full text-sm font-bold">12</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-silver text-white px-3 py-1 rounded-full text-sm font-bold">10</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-bronze text-white px-3 py-1 rounded-full text-sm font-bold">9</span></td>
+                <td class="px-6 py-4 text-center font-bold text-lg">31</td>
+              </tr>
+              <!-- 3 -->
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 font-bold text-orange-600">3</td>
+                <td class="px-6 py-4 font-semibold">Tapin</td>
+                <td class="px-6 py-4 text-center"><span class="medal-gold text-white px-3 py-1 rounded-full text-sm font-bold">8</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-silver text-white px-3 py-1 rounded-full text-sm font-bold">7</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-bronze text-white px-3 py-1 rounded-full text-sm font-bold">6</span></td>
+                <td class="px-6 py-4 text-center font-bold text-lg">21</td>
+              </tr>
+              <!-- 4 -->
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 font-bold">4</td>
+                <td class="px-6 py-4 font-semibold">Hulu Sungai Selatan</td>
+                <td class="px-6 py-4 text-center"><span class="medal-gold text-white px-3 py-1 rounded-full text-sm font-bold">6</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-silver text-white px-3 py-1 rounded-full text-sm font-bold">8</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-bronze text-white px-3 py-1 rounded-full text-sm font-bold">5</span></td>
+                <td class="px-6 py-4 text-center font-bold text-lg">19</td>
+              </tr>
+              <!-- 5 -->
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 font-bold">5</td>
+                <td class="px-6 py-4 font-semibold">Tanah Laut</td>
+                <td class="px-6 py-4 text-center"><span class="medal-gold text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-silver text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-bronze text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center font-bold text-lg">0</td>
+              </tr>
+              <!-- 6 -->
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 font-bold">6</td>
+                <td class="px-6 py-4 font-semibold">Balangan</td>
+                <td class="px-6 py-4 text-center"><span class="medal-gold text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-silver text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-bronze text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center font-bold text-lg">0</td>
+              </tr>
+              <!-- 7 -->
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 font-bold">7</td>
+                <td class="px-6 py-4 font-semibold">Banjar</td>
+                <td class="px-6 py-4 text-center"><span class="medal-gold text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-silver text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-bronze text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center font-bold text-lg">0</td>
+              </tr>
+              <!-- 8 -->
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 font-bold">8</td>
+                <td class="px-6 py-4 font-semibold">Barito Kuala</td>
+                <td class="px-6 py-4 text-center"><span class="medal-gold text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-silver text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-bronze text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center font-bold text-lg">0</td>
+              </tr>
+              <!-- 9 -->
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 font-bold">9</td>
+                <td class="px-6 py-4 font-semibold">Hulu Sungai Tengah</td>
+                <td class="px-6 py-4 text-center"><span class="medal-gold text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-silver text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-bronze text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center font-bold text-lg">0</td>
+              </tr>
+              <!-- 10 -->
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 font-bold">10</td>
+                <td class="px-6 py-4 font-semibold">Hulu Sungai Utara</td>
+                <td class="px-6 py-4 text-center"><span class="medal-gold text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-silver text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-bronze text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center font-bold text-lg">0</td>
+              </tr>
+              <!-- 11 -->
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 font-bold">11</td>
+                <td class="px-6 py-4 font-semibold">Kotabaru</td>
+                <td class="px-6 py-4 text-center"><span class="medal-gold text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-silver text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-bronze text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center font-bold text-lg">0</td>
+              </tr>
+              <!-- 12 -->
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 font-bold">12</td>
+                <td class="px-6 py-4 font-semibold">Tabalong</td>
+                <td class="px-6 py-4 text-center"><span class="medal-gold text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-silver text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-bronze text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center font-bold text-lg">0</td>
+              </tr>
+              <!-- 13 -->
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-bold">13</td>
+                <td class="px-6 py-4 font-semibold">Tanah Bumbu</td>
+                <td class="px-6 py-4 text-center"><span class="medal-gold text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-silver text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center"><span class="medal-bronze text-white px-3 py-1 rounded-full text-sm font-bold">0</span></td>
+                <td class="px-6 py-4 text-center font-bold text-lg">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info & Layanan Tab -->
+    <div id="content-layanan" class="tab-content hidden">
+      <div class="mb-6">
+        <h2 class="text-3xl font-bold text-white mb-2">Informasi & Layanan</h2>
+        <p class="text-blue-100">Layanan pendukung untuk peserta dan pengunjung Porprov</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Kesehatan -->
+        <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-2xl">🏥</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Kesehatan</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-start">
+              <span class="text-green-500 mr-2">📍</span>
+              <div>
+                <p class="font-semibold">Posko Kesehatan Utama</p>
+                <p class="text-sm text-gray-600">Stadion Demang Lehman</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-green-500 mr-2">🚑</span>
+              <div>
+                <p class="font-semibold">Ambulans Siaga</p>
+                <p class="text-sm text-gray-600">24 jam di setiap venue</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-green-500 mr-2">📞</span>
+              <div>
+                <p class="font-semibold">Hotline Kesehatan</p>
+                <p class="text-sm text-gray-600">0511-123-4567</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Keamanan -->
+        <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-2xl">👮‍♂️</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Keamanan</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-start">
+              <span class="text-blue-500 mr-2">🚔</span>
+              <div>
+                <p class="font-semibold">Pos Keamanan</p>
+                <p class="text-sm text-gray-600">Di setiap venue pertandingan</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-blue-500 mr-2">📱</span>
+              <div>
+                <p class="font-semibold">Hotline Keamanan</p>
+                <p class="text-sm text-gray-600">110 atau 0511-987-6543</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-blue-500 mr-2">🎫</span>
+              <div>
+                <p class="font-semibold">Pemeriksaan Tiket</p>
+                <p class="text-sm text-gray-600">Wajib tunjukkan ID & tiket</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kuliner -->
+        <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-2xl">🍽️</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Kuliner</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-start">
+              <span class="text-yellow-500 mr-2">🏪</span>
+              <div>
+                <p class="font-semibold">Food Court Porprov</p>
+                <p class="text-sm text-gray-600">Area Stadion Demang Lehman</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-yellow-500 mr-2">🍜</span>
+              <div>
+                <p class="font-semibold">Kuliner Khas Kalsel</p>
+                <p class="text-sm text-gray-600">Soto Banjar, Ketupat Kandangan</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-yellow-500 mr-2">💳</span>
+              <div>
+                <p class="font-semibold">Pembayaran</p>
+                <p class="text-sm text-gray-600">Tunai & Non-tunai tersedia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Oleh-oleh -->
+        <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-2xl">🎁</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Oleh-oleh</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-start">
+              <span class="text-purple-500 mr-2">🛍️</span>
+              <div>
+                <p class="font-semibold">Merchandise Porprov</p>
+                <p class="text-sm text-gray-600">Kaos, topi, gantungan kunci</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-purple-500 mr-2">🍯</span>
+              <div>
+                <p class="font-semibold">Produk Lokal</p>
+                <p class="text-sm text-gray-600">Madu, kerajinan sasirangan</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-purple-500 mr-2">📍</span>
+              <div>
+                <p class="font-semibold">Lokasi</p>
+                <p class="text-sm text-gray-600">Stand penjualan di setiap venue</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layanan Ojek Online -->
+        <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-2xl">🛵</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Layanan Ojek Online</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <span class="text-emerald-500 mr-2">🛵</span>
+                <p class="font-semibold">Grab</p>
+              </div>
+              <a href="https://www.google.com/search?q=Grab" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold hover:bg-blue-100">Cari</a>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <span class="text-green-600 mr-2">🛵</span>
+                <p class="font-semibold">Gojek</p>
+              </div>
+              <a href="https://www.google.com/search?q=Gojek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold hover:bg-blue-100">Cari</a>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <span class="text-yellow-500 mr-2">🛵</span>
+                <p class="font-semibold">Maxim</p>
+              </div>
+              <a href="https://www.google.com/search?q=Maxim+ride+hail" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold hover:bg-blue-100">Cari</a>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <span class="text-purple-500 mr-2">🛵</span>
+                <p class="font-semibold">OM-JEK TALA</p>
+              </div>
+              <a href="https://www.google.com/search?q=OM-JEK+TALA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold hover:bg-blue-100">Cari</a>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <span class="text-sky-500 mr-2">🛵</span>
+                <p class="font-semibold">INDOJEKU</p>
+              </div>
+              <a href="https://www.google.com/search?q=INDOJEKU" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold hover:bg-blue-100">Cari</a>
+            </div>
+          </div>
+          <p class="mt-4 text-xs text-gray-500">Catatan: Tersedia sesuai jangkauan layanan di lokasi Anda.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Venue Tab -->
+    <div id="content-venue" class="tab-content hidden">
+      <div class="mb-6">
+        <h2 class="text-3xl font-bold text-white mb-2">Venue Pertandingan</h2>
+        <p class="text-blue-100">Lokasi dan cabang olahraga yang dipertandingkan</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Sample of venue cards -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+          <div class="h-24 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+            <span class="text-3xl">🏟️</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-sm font-bold mb-1">Stadion Prestasi Kencana</h3>
+            <p class="text-gray-600 text-xs mb-3">Pelaihari, Tanah Laut</p>
+            <div class="space-x-2">
+              <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">🏃‍♂️ Atletik</span>
+              <span class="inline-block bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">🎯 Menembak Outdoor</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+          <div class="h-24 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
+            <span class="text-3xl">⚽</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-sm font-bold mb-1">Lapangan Sepakbola Karang Taruna</h3>
+            <p class="text-gray-600 text-xs mb-3">Tanah Laut</p>
+            <span class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">⚽ Sepakbola Putra</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+          <div class="h-24 bg-gradient-to-r from-cyan-500 to-cyan-600 flex items-center justify-center">
+            <span class="text-3xl">🏸</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-sm font-bold mb-1">GOR Tuntung Pandang</h3>
+            <p class="text-gray-600 text-xs mb-3">Tanah Laut</p>
+            <span class="inline-block bg-cyan-100 text-cyan-800 px-2 py-1 rounded-full text-xs">🏸 Bulu Tangkis</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+          <div class="h-24 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
+            <span class="text-3xl">🥋</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-sm font-bold mb-1">Gedung Parudatu Kodim 1009</h3>
+            <p class="text-gray-600 text-xs mb-3">Pelaihari, Tanah Laut</p>
+            <div class="space-x-2">
+              <span class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">🥋 Karate</span>
+              <span class="inline-block bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full text-xs">🥊 Pencak Silat</span>
+              <span class="inline-block bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs">🥊 Kempo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+          <div class="h-24 bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center">
+            <span class="text-3xl">🎾</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-sm font-bold mb-1">Lapangan Tenis Pemuda</h3>
+            <p class="text-gray-600 text-xs mb-3">Tanah Laut</p>
+            <span class="inline-block bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs">🎾 Tenis Lapangan</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+          <div class="h-24 bg-gradient-to-r from-teal-500 to-teal-600 flex items-center justify-center">
+            <span class="text-3xl">🥋</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-sm font-bold mb-1">Gedung Islamic Center Al Manar</h3>
+            <p class="text-gray-600 text-xs mb-3">Tanah Laut</p>
+            <div class="space-x-2">
+              <span class="inline-block bg-teal-100 text-teal-800 px-2 py-1 rounded-full text-xs">🥋 Judo</span>
+              <span class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">🥋 Jujitsu</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+          <div class="h-24 bg-gradient-to-r from-amber-500 to-amber-600 flex items-center justify-center">
+            <span class="text-3xl">🥁</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-sm font-bold mb-1">Jalan 6/8 Kilo</h3>
+            <p class="text-gray-600 text-xs mb-3">Kota Pelaihari</p>
+            <span class="inline-block bg-amber-100 text-amber-800 px-2 py-1 rounded-full text-xs">🥁 Drumband</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+          <div class="h-24 bg-gradient-to-r from-sky-500 to-sky-600 flex items-center justify-center">
+            <span class="text-3xl">🏄‍♂️</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-sm font-bold mb-1">Pantai Batakan Baru</h3>
+            <p class="text-gray-600 text-xs mb-3">Tanah Laut</p>
+            <div class="space-x-2">
+              <span class="inline-block bg-sky-100 text-sky-800 px-2 py-1 rounded-full text-xs">🎿 Ski Air</span>
+              <span class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">🏹 Berkuda Memanah</span>
+              <span class="inline-block bg-cyan-100 text-cyan-800 px-2 py-1 rounded-full text-xs">🏐 Volly Pasir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+          <div class="h-24 bg-gradient-to-r from-orange-400 to-orange-500 flex items-center justify-center">
+            <span class="text-3xl">🏖️</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-sm font-bold mb-1">Pantai Takisung</h3>
+            <p class="text-gray-600 text-xs mb-3">Tanah Laut</p>
+            <div class="space-x-2">
+              <span class="inline-block bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">🤾‍♂️ Bola Tangan Pasir</span>
+              <span class="inline-block bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs">🏊‍♂️ Triathlon</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+          <div class="h-24 bg-gradient-to-r from-blue-400 to-blue-500 flex items-center justify-center">
+            <span class="text-3xl">🏞️</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-sm font-bold mb-1">Bendungan Gunung Makmur</h3>
+            <p class="text-gray-600 text-xs mb-3">Tanah Laut</p>
+            <span class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">🏊‍♂️ Renang Terbuka</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+          <div class="h-24 bg-gradient-to-r from-emerald-400 to-emerald-500 flex items-center justify-center">
+            <span class="text-3xl">⛳</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-sm font-bold mb-1">Lapangan Golf Swargaloka</h3>
+            <p class="text-gray-600 text-xs mb-3">Banjarbaru</p>
+            <span class="inline-block bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full text-xs">⛳ Golf</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+          <div class="h-24 bg-gradient-to-r from-cyan-400 to-cyan-500 flex items-center justify-center">
+            <span class="text-3xl">🏊‍♂️</span>
+          </div>
+          <div class="p-4">
+            <h3 class="text-sm font-bold mb-1">Kolam Renang Tirta Kenacana</h3>
+            <p class="text-gray-600 text-xs mb-3">Pelaihari</p>
+            <span class="inline-block bg-cyan-100 text-cyan-800 px-2 py-1 rounded-full text-xs">🏊‍♂️ Renang</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jadwal Tab -->
+    <div id="content-jadwal" class="tab-content hidden">
+      <div class="mb-6">
+        <h2 class="text-3xl font-bold text-white mb-2">Jadwal Pertandingan</h2>
+        <p class="text-blue-100">Jadwal lengkap pertandingan Porprov Kalsel 2025</p>
+      </div>
+
+      <!-- Filter Tanggal -->
+      <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+        <div class="flex flex-wrap gap-2">
+          <button onclick="filterJadwal('semua')" class="filter-btn bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium">Semua Hari</button>
+          <!-- Oktober -->
+          <button onclick="filterJadwal('2025-10-26')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">26 Okt</button>
+          <button onclick="filterJadwal('2025-10-27')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">27 Okt</button>
+          <button onclick="filterJadwal('2025-10-28')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">28 Okt</button>
+          <button onclick="filterJadwal('2025-10-29')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">29 Okt</button>
+          <button onclick="filterJadwal('2025-10-30')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">30 Okt</button>
+          <button onclick="filterJadwal('2025-10-31')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">31 Okt</button>
+          <!-- November -->
+          <button onclick="filterJadwal('2025-11-01')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">1 Nov</button>
+          <button onclick="filterJadwal('2025-11-02')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">2 Nov</button>
+          <button onclick="filterJadwal('2025-11-03')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">3 Nov</button>
+          <button onclick="filterJadwal('2025-11-04')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">4 Nov</button>
+          <button onclick="filterJadwal('2025-11-05')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">5 Nov</button>
+          <button onclick="filterJadwal('2025-11-06')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">6 Nov</button>
+          <button onclick="filterJadwal('2025-11-07')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">7 Nov</button>
+          <button onclick="filterJadwal('2025-11-08')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">8 Nov</button>
+          <button onclick="filterJadwal('2025-11-09')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">9 Nov</button>
+          <button onclick="filterJadwal('2025-11-10')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">10 Nov</button>
+          <button onclick="filterJadwal('2025-11-11')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">11 Nov</button>
+          <button onclick="filterJadwal('2025-11-12')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">12 Nov</button>
+          <button onclick="filterJadwal('2025-11-13')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">13 Nov</button>
+          <button onclick="filterJadwal('2025-11-14')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">14 Nov</button>
+          <button onclick="filterJadwal('2025-11-27')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">27 Nov</button>
+          <button onclick="filterJadwal('2025-11-28')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">28 Nov</button>
+          <button onclick="filterJadwal('2025-11-29')" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300">29 Nov</button>
+        </div>
+      </div>
+
+      <!-- Jadwal Cards -->
+      <div class="space-y-4" id="jadwal-container">
+        <!-- Disusun per tanggal sesuai data -->
+        
+        <!-- 26 Okt -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-26">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tinju</h3>
+            <span class="text-sm text-gray-600">26 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna RTH Kijang Mas</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-27">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tinju</h3>
+            <span class="text-sm text-gray-600">27 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna RTH Kijang Mas</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-28">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tinju</h3>
+            <span class="text-sm text-gray-600">28 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna RTH Kijang Mas</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-29">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tinju</h3>
+            <span class="text-sm text-gray-600">29 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna RTH Kijang Mas</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-30">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tinju</h3>
+            <span class="text-sm text-gray-600">30 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna RTH Kijang Mas</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-26">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Kick Boxing</h3>
+            <span class="text-sm text-gray-600">26 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna Desa Panggung</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-27">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Kick Boxing</h3>
+            <span class="text-sm text-gray-600">27 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna Desa Panggung</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-28">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Kick Boxing</h3>
+            <span class="text-sm text-gray-600">28 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna Desa Panggung</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-29">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Kick Boxing</h3>
+            <span class="text-sm text-gray-600">29 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna Desa Panggung</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-30">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Kick Boxing</h3>
+            <span class="text-sm text-gray-600">30 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna Desa Panggung</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-31">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Kick Boxing</h3>
+            <span class="text-sm text-gray-600">31 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna Desa Panggung</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-26">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Panahan</h3>
+            <span class="text-sm text-gray-600">26 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 RTH Kijang Mas Permai</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-27">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Panahan</h3>
+            <span class="text-sm text-gray-600">27 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 RTH Kijang Mas Permai</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-28">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Panahan</h3>
+            <span class="text-sm text-gray-600">28 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 RTH Kijang Mas Permai</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-29">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Panahan</h3>
+            <span class="text-sm text-gray-600">29 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 RTH Kijang Mas Permai</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-26">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Panjat Tebing</h3>
+            <span class="text-sm text-gray-600">26 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 RTH Kijang Mas Permai</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-27">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Panjat Tebing</h3>
+            <span class="text-sm text-gray-600">27 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 RTH Kijang Mas Permai</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-28">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Panjat Tebing</h3>
+            <span class="text-sm text-gray-600">28 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 RTH Kijang Mas Permai</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-29">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Panjat Tebing</h3>
+            <span class="text-sm text-gray-600">29 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 RTH Kijang Mas Permai</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-30">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Panjat Tebing</h3>
+            <span class="text-sm text-gray-600">30 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 RTH Kijang Mas Permai</div>
+        </div>
+
+        <!-- 27 Okt -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-26">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">26 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-27">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">27 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-28">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">28 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-29">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">29 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-30">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">30 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-31">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">31 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-01">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">1 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-02">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">2 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-03">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">3 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-04">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">4 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-05">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">5 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-06">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">6 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-27">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">27 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-28">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">28 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-29">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">29 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-30">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">30 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-31">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">31 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-01">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">1 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-02">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">2 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-03">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">3 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-04">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">4 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-05">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">5 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-06">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">6 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-07">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">7 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-08">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Lapangan</h3>
+            <span class="text-sm text-gray-600">8 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-27">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Taekwondo</h3>
+            <span class="text-sm text-gray-600">27 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Indoor Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-28">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Taekwondo</h3>
+            <span class="text-sm text-gray-600">28 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Indoor Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-29">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Taekwondo</h3>
+            <span class="text-sm text-gray-600">29 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Indoor Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-30">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Taekwondo</h3>
+            <span class="text-sm text-gray-600">30 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Indoor Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-31">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Taekwondo</h3>
+            <span class="text-sm text-gray-600">31 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Indoor Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-01">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Taekwondo</h3>
+            <span class="text-sm text-gray-600">1 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Indoor Pemuda</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-27">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Wushu</h3>
+            <span class="text-sm text-gray-600">27–30 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung Logistik KPU Tanah Laut</div>
+        </div>
+
+        <!-- 28 Okt -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-28">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Pencak Silat</h3>
+            <span class="text-sm text-gray-600">28–31 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung Paraduta Kodim 1009 Pelaihari</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-28">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Bulu Tangkis</h3>
+            <span class="text-sm text-gray-600">28–31 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 GOR Tuntung Pandang</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-28">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Balap Sepeda</h3>
+            <span class="text-sm text-gray-600">28–29 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Sepeda Gunung Kayangan</div>
+        </div>
+
+        <!-- 29 Okt -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-29">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Catur</h3>
+            <span class="text-sm text-gray-600">29 Okt – 4 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Aula Kecamatan Pelaihari</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-29">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Baseball / Softball</h3>
+            <span class="text-sm text-gray-600">29 Okt – 5 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Bola SMK PP Pelaihari</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-29">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">IODI</h3>
+            <span class="text-sm text-gray-600">29–31 Okt</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung Balairung Tuntung Pandang</div>
+        </div>
+
+        <!-- 30 Okt -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-30">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">E-Sport</h3>
+            <span class="text-sm text-gray-600">30 Okt – 4 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Aula Dinas Pendidikan Pelaihari</div>
+        </div>
+
+        <!-- 31 Okt -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-31">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Binaraga</h3>
+            <span class="text-sm text-gray-600">31 Okt – 3 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Aula Hutan Jati Pelaihari</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-31">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Balap Sepeda</h3>
+            <span class="text-sm text-gray-600">31 Okt – 2 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Jalan Kota Pelaihari</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-10-31">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Balap Sepeda</h3>
+            <span class="text-sm text-gray-600">31 Okt – 2 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Jalan Pelaihari–Batakan</div>
+        </div>
+
+        <!-- 2 Nov -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-02">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Judo</h3>
+            <span class="text-sm text-gray-600">2 – 8 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung Islamic Center Al Manar</div>
+        </div>
+
+        <!-- 3 Nov -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-03">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Karate</h3>
+            <span class="text-sm text-gray-600">3 – 6 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung Paraduta Kodim 1009 Pelaihari</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-03">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Renang</h3>
+            <span class="text-sm text-gray-600">3 – 6 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Kolam Renang Tirta Kencana Pelaihari</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-03">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Sepak Takraw</h3>
+            <span class="text-sm text-gray-600">3 – 8 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung Aufar Futsal Pelaihari</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-03">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Billiard</h3>
+            <span class="text-sm text-gray-600">3 – 9 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung Pusdiklat Bilyard Komplek CIP</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-03">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Balap Motor</h3>
+            <span class="text-sm text-gray-600">3 – 7 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Sirkuit Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-03">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Kurash</h3>
+            <span class="text-sm text-gray-600">3 – 7 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Aula SMK PP Pelaihari</div>
+        </div>
+
+        <!-- 4 Nov -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-04">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Tenis Meja</h3>
+            <span class="text-sm text-gray-600">4 – 10 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Indoor Pemuda</div>
+        </div>
+
+        <!-- 5 Nov -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-05">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Menembak Outdoor</h3>
+            <span class="text-sm text-gray-600">5 – 8 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Pertasi Kencana Outdoor</div>
+        </div>
+
+        <!-- 6 Nov -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-06">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Angkat Besi</h3>
+            <span class="text-sm text-gray-600">6 – 8 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Aula Hutan Jati Pelaihari</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-06">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Bola Volly Indoors</h3>
+            <span class="text-sm text-gray-600">6 – 13 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 GOR Tuntung Pandang</div>
+        </div>
+
+        <!-- 9 Nov -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-09">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Muaythai</h3>
+            <span class="text-sm text-gray-600">9 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna RTH Kijang Mas</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-10">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Muaythai</h3>
+            <span class="text-sm text-gray-600">10 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna RTH Kijang Mas</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-11">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Muaythai</h3>
+            <span class="text-sm text-gray-600">11 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna RTH Kijang Mas</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-12">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Muaythai</h3>
+            <span class="text-sm text-gray-600">12 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna RTH Kijang Mas</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-13">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Muaythai</h3>
+            <span class="text-sm text-gray-600">13 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna RTH Kijang Mas</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-09">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Senam</h3>
+            <span class="text-sm text-gray-600">9 – 13 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Basket RTH Kijangmas Permai</div>
+        </div>
+
+        <!-- 10 Nov -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-10">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Teq Ball</h3>
+            <span class="text-sm text-gray-600">10 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna Desa Panggung</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-11">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Teq Ball</h3>
+            <span class="text-sm text-gray-600">11 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna Desa Panggung</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-12">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Teq Ball</h3>
+            <span class="text-sm text-gray-600">12 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna Desa Panggung</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-13">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Teq Ball</h3>
+            <span class="text-sm text-gray-600">13 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung serba guna Desa Panggung</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-10">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Hapkido</h3>
+            <span class="text-sm text-gray-600">10 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-11">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Hapkido</h3>
+            <span class="text-sm text-gray-600">11 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-12">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Hapkido</h3>
+            <span class="text-sm text-gray-600">12 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-13">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Hapkido</h3>
+            <span class="text-sm text-gray-600">13 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Lapangan Tenis Matah</div>
+        </div>
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-10">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Menembak Indoor</h3>
+            <span class="text-sm text-gray-600">10 – 12 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung Logistik KPU Tanah Laut</div>
+        </div>
+
+        <!-- 11 Nov -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-11">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Jujitsu</h3>
+            <span class="text-sm text-gray-600">11 – 13 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Gedung Islamic Center Al Manar</div>
+        </div>
+
+        <!-- 12 Nov -->
+        <div class="jadwal-item bg-white rounded-lg shadow-md p-6" data-tanggal="2025-11-12">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Angkat Berat</h3>
+            <span class="text-sm text-gray-600">12 – 13 Nov</span>
+          </div>
+          <div class="text-sm text-gray-600">📍 Aula Hutan Jati Pelaihari</div>
+        </div>
+
+        <!-- 13 Nov: kosong (rentang terakhir) -->
+
+        <!-- 14 Nov: penutupan -->
+        <div class="jadwal-item bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-lg shadow-md p-6 ring-2 ring-white/40" data-tanggal="2025-11-14">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-lg">Upacara Penutupan Porprov Kalsel 2025</h3>
+            <span class="text-sm opacity-90">14 Nov</span>
+          </div>
+          <div class="text-sm opacity-90">📍 Stadion Demang Lehman</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sync to Google Sheets Button -->
+  <div class="fixed bottom-6 right-6">
+    <button onclick="syncToGoogleSheets()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full shadow-lg flex items-center space-x-2 transition-all duration-300">
+      <span>📊</span>
+      <span class="font-medium">Sync ke Google Sheets</span>
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="gradient-bg text-white mt-16">
+    <div class="container mx-auto px-4 py-8">
+      <div class="text-center">
+        <h3 class="text-xl font-bold mb-2">Porprov Kalimantan Selatan 2025</h3>
+        <p class="text-blue-100 mb-4">Membangun Prestasi, Memperkuat Persatuan</p>
+        <div class="flex justify-center space-x-6 text-sm">
+          <span>📧 info@porprovkalsel.id</span>
+          <span>📞 0511-123-4567</span>
+          <a href="https://www.porprovkalsel.id" target="_blank" rel="noopener noreferrer" class="hover:underline">🌐 www.porprovkalsel.id</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tabs
+    function showTab(tabName) {
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+      document.querySelectorAll('.tab-button').forEach(t => {
+        t.classList.remove('tab-active');
+        t.classList.add('text-gray-600','hover:text-blue-600');
+      });
+      document.getElementById('content-' + tabName).classList.remove('hidden');
+      const activeTab = document.getElementById('tab-' + tabName);
+      activeTab.classList.add('tab-active');
+      activeTab.classList.remove('text-gray-600','hover:text-blue-600');
+    }
+
+    // Filter Jadwal
+    function filterJadwal(tanggal) {
+      const items = document.querySelectorAll('.jadwal-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-blue-600','text-white');
+        btn.classList.add('bg-gray-200','text-gray-700','hover:bg-gray-300');
+      });
+
+      event.target.classList.remove('bg-gray-200','text-gray-700','hover:bg-gray-300');
+      event.target.classList.add('bg-blue-600','text-white');
+
+      items.forEach(item => {
+        item.style.display = (tanggal === 'semua' || item.dataset.tanggal === tanggal) ? 'block' : 'none';
+      });
+    }
+
+    // Set today's date
+    document.getElementById('today-date').textContent = '🗓️ ' + new Date().toLocaleDateString('id-ID', {
+      weekday: 'long',
+      year: 'numeric', 
+      month: 'long',
+      day: 'numeric'
+    });
+
+    // Read more functionality
+    document.querySelectorAll('.read-more').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const title = this.dataset.title;
+        alert(`Membaca artikel: ${title}\n\nFitur baca lengkap akan segera tersedia!`);
+      });
+    });
+
+    // Initialize with berita tab active
+    showTab('berita');
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9851d360148bf932',t:'MTc1ODg3OTg5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
