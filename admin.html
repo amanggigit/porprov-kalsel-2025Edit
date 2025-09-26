@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - Porprov Kalsel 2025</title>
+    <title>Admin Panel - KONI Kabupaten Tapin</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
@@ -25,14 +25,6 @@
             background: linear-gradient(135deg, #3b82f6, #1d4ed8); 
             color: white; 
         }
-        .success-message {
-            background: linear-gradient(135deg, #10b981, #059669);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            margin: 10px 0;
-            display: none;
-        }
     </style>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-blue-900">
@@ -41,24 +33,21 @@
         <div class="container mx-auto px-4 py-6">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center ring-2 ring-white/20">
-                        <span class="text-2xl">⚙️</span>
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center ring-4 ring-white/20">
+                        <span class="text-3xl">⚙️</span>
                     </div>
                     <div>
-                        <h1 class="text-2xl font-bold">ADMIN PANEL</h1>
-                        <p class="text-blue-100 mt-1">Porprov Kalimantan Selatan 2025</p>
+                        <h1 class="text-3xl font-bold">Admin Panel</h1>
+                        <p class="text-blue-100 mt-1">KONI Kabupaten Tapin - Sistem Manajemen Data</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <span id="admin-date" class="text-sm">🗓️ </span>
-                    <button onclick="changePassword()" class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-                        🔑 Ganti Password
-                    </button>
-                    <button onclick="logout()" class="bg-red-500/80 hover:bg-red-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-                        🚪 Logout
-                    </button>
+                    <div class="text-center">
+                        <div class="text-lg font-bold" id="current-date"></div>
+                        <div class="text-sm text-blue-100">Hari Ini</div>
+                    </div>
                     <a href="index.html" class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-                        🏠 Kembali ke Website
+                        🏠 Kembali ke Beranda
                     </a>
                 </div>
             </div>
@@ -69,20 +58,23 @@
     <nav class="bg-white shadow-sm sticky top-0 z-40">
         <div class="container mx-auto px-4">
             <div class="flex overflow-x-auto">
-                <button onclick="showAdminTab('berita')" id="admin-tab-berita" class="admin-tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap tab-active">
+                <button onclick="showTab('dashboard')" id="tab-dashboard" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap tab-active">
+                    📊 Dashboard
+                </button>
+                <button onclick="showTab('berita')" id="tab-berita" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap">
                     📰 Kelola Berita
                 </button>
-                <button onclick="showAdminTab('medali')" id="admin-tab-medali" class="admin-tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap">
-                    🥇 Kelola Medali
+                <button onclick="showTab('medali')" id="tab-medali" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap">
+                    🏆 Kelola Medali
                 </button>
-                <button onclick="showAdminTab('jadwal')" id="admin-tab-jadwal" class="admin-tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap">
+                <button onclick="showTab('jadwal')" id="tab-jadwal" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap">
                     📅 Kelola Jadwal
                 </button>
-                <button onclick="showAdminTab('venue')" id="admin-tab-venue" class="admin-tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap">
+                <button onclick="showTab('venue')" id="tab-venue" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap">
                     🏟️ Kelola Venue
                 </button>
-                <button onclick="showAdminTab('backup')" id="admin-tab-backup" class="admin-tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap">
-                    💾 Backup Data
+                <button onclick="showTab('layanan')" id="tab-layanan" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-blue-600 whitespace-nowrap">
+                    🏥 Kelola Layanan
                 </button>
             </div>
         </div>
@@ -90,76 +82,130 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
-        <!-- Kelola Berita Tab -->
-        <div id="admin-content-berita" class="admin-tab-content">
+        <!-- Dashboard Tab -->
+        <div id="content-dashboard" class="tab-content">
             <div class="mb-6">
-                <h2 class="text-3xl font-bold text-white mb-2">Kelola Berita</h2>
-                <p class="text-blue-100">Tambah, edit, atau hapus berita terkini</p>
+                <h2 class="text-3xl font-bold text-white mb-2">📊 Dashboard Admin</h2>
+                <p class="text-blue-100">Ringkasan data dan statistik KONI Kabupaten Tapin</p>
             </div>
 
-            <!-- Form Tambah Berita -->
-            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-                <h3 class="text-xl font-bold mb-4">Tambah Berita Baru</h3>
-                <form id="form-berita" onsubmit="tambahBerita(event)">
-                    <div class="grid md:grid-cols-2 gap-4 mb-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Judul Berita</label>
-                            <input type="text" id="berita-judul" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Kategori</label>
-                            <select id="berita-kategori" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
-                                <option value="">Pilih Kategori</option>
-                                <option value="RENANG">RENANG</option>
-                                <option value="SEPAK BOLA">SEPAK BOLA</option>
-                                <option value="ATLETIK">ATLETIK</option>
-                                <option value="BULU TANGKIS">BULU TANGKIS</option>
-                                <option value="BASKET">BASKET</option>
-                                <option value="VOLI">VOLI</option>
-                                <option value="TENIS">TENIS</option>
-                                <option value="UMUM">UMUM</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Ringkasan Berita</label>
-                        <textarea id="berita-ringkasan" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Isi Berita Lengkap</label>
-                        <textarea id="berita-isi" rows="6" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
-                    </div>
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium">
-                        ➕ Tambah Berita
-                    </button>
-                </form>
-                <div id="success-berita" class="success-message">✅ Berita berhasil ditambahkan!</div>
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
+                    <div class="text-3xl mb-2">📰</div>
+                    <div class="text-2xl font-bold text-gray-800" id="total-berita">0</div>
+                    <div class="text-gray-600">Total Berita</div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
+                    <div class="text-3xl mb-2">🏆</div>
+                    <div class="text-2xl font-bold text-gray-800" id="total-medali-dashboard">0</div>
+                    <div class="text-gray-600">Total Medali</div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
+                    <div class="text-3xl mb-2">📅</div>
+                    <div class="text-2xl font-bold text-gray-800" id="total-jadwal">0</div>
+                    <div class="text-gray-600">Total Jadwal</div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
+                    <div class="text-3xl mb-2">🏥</div>
+                    <div class="text-2xl font-bold text-gray-800" id="total-layanan">0</div>
+                    <div class="text-gray-600">Total Layanan</div>
+                </div>
             </div>
 
-            <!-- Daftar Berita -->
+            <!-- Quick Actions -->
             <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold mb-4">Daftar Berita</h3>
-                <div id="daftar-berita" class="space-y-4">
-                    <!-- Berita akan ditampilkan di sini -->
+                <h3 class="text-xl font-bold mb-4">⚡ Aksi Cepat</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <button onclick="showTab('berita')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-medium">
+                        📰 Tambah Berita
+                    </button>
+                    <button onclick="showTab('medali')" class="bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-medium">
+                        🏆 Update Medali
+                    </button>
+                    <button onclick="showTab('jadwal')" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg font-medium">
+                        📅 Tambah Jadwal
+                    </button>
+                    <button onclick="showTab('layanan')" class="bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg font-medium">
+                        🏥 Kelola Layanan
+                    </button>
                 </div>
             </div>
         </div>
 
-        <!-- Kelola Medali Tab -->
-        <div id="admin-content-medali" class="admin-tab-content hidden">
+        <!-- Berita Management Tab -->
+        <div id="content-berita" class="tab-content hidden">
             <div class="mb-6">
-                <h2 class="text-3xl font-bold text-white mb-2">Kelola Perolehan Medali</h2>
+                <h2 class="text-3xl font-bold text-white mb-2">📰 Kelola Berita</h2>
+                <p class="text-blue-100">Tambah, edit, dan hapus berita KONI Kabupaten Tapin</p>
+            </div>
+
+            <!-- Add Berita Form -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h3 class="text-xl font-bold mb-4">➕ Tambah Berita Baru</h3>
+                <form id="form-berita" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Judul Berita</label>
+                            <input type="text" id="berita-judul" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Kategori</label>
+                            <select id="berita-kategori" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                <option value="">Pilih Kategori</option>
+                                <option value="UMUM">Umum</option>
+                                <option value="RENANG">Renang</option>
+                                <option value="SEPAK BOLA">Sepak Bola</option>
+                                <option value="ATLETIK">Atletik</option>
+                                <option value="BASKET">Basket</option>
+                                <option value="BULU TANGKIS">Bulu Tangkis</option>
+                                <option value="VOLI">Voli</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Ringkasan</label>
+                        <textarea id="berita-ringkasan" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Isi Berita</label>
+                        <textarea id="berita-isi" rows="6" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
+                    <div class="flex gap-4">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium">
+                            💾 Simpan Berita
+                        </button>
+                        <button type="button" onclick="resetFormBerita()" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-medium">
+                            🔄 Reset Form
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Berita List -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold mb-4">📋 Daftar Berita</h3>
+                <div id="admin-berita-list" class="space-y-4">
+                    <!-- Berita list will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Medali Management Tab -->
+        <div id="content-medali" class="tab-content hidden">
+            <div class="mb-6">
+                <h2 class="text-3xl font-bold text-white mb-2">🏆 Kelola Medali</h2>
                 <p class="text-blue-100">Update perolehan medali per kabupaten/kota</p>
             </div>
 
-            <!-- Form Update Medali -->
+            <!-- Medali Form -->
             <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-                <h3 class="text-xl font-bold mb-4">Update Medali</h3>
-                <form id="form-medali" onsubmit="updateMedali(event)">
-                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <h3 class="text-xl font-bold mb-4">🏅 Update Medali</h3>
+                <form id="form-medali" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Kabupaten/Kota</label>
-                            <select id="medali-kabupaten" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                            <select id="medali-kabupaten" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
                                 <option value="">Pilih Kabupaten/Kota</option>
                                 <option value="Banjarmasin">Banjarmasin</option>
                                 <option value="Banjarbaru">Banjarbaru</option>
@@ -177,41 +223,38 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Cabang Olahraga</label>
-                            <input type="text" id="medali-cabor" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Contoh: Renang 100m Putra" required>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-3 gap-4 mb-4">
-                        <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">🥇 Emas</label>
-                            <input type="number" id="medali-emas" min="0" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" value="0">
+                            <input type="number" id="medali-emas" min="0" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">🥈 Perak</label>
-                            <input type="number" id="medali-perak" min="0" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" value="0">
+                            <input type="number" id="medali-perak" min="0" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">🥉 Perunggu</label>
-                            <input type="number" id="medali-perunggu" min="0" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" value="0">
+                            <input type="number" id="medali-perunggu" min="0" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
                         </div>
                     </div>
-                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium">
-                        🏆 Update Medali
-                    </button>
+                    <div class="flex gap-4">
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium">
+                            💾 Update Medali
+                        </button>
+                        <button type="button" onclick="resetFormMedali()" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-medium">
+                            🔄 Reset Form
+                        </button>
+                    </div>
                 </form>
-                <div id="success-medali" class="success-message">✅ Data medali berhasil diupdate!</div>
             </div>
 
-            <!-- Tabel Medali Saat Ini -->
+            <!-- Medali Table -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
                 <div class="p-6 border-b">
-                    <h3 class="text-xl font-bold">Klasemen Medali Saat Ini</h3>
+                    <h3 class="text-xl font-bold">📊 Tabel Medali Saat Ini</h3>
                 </div>
                 <div class="overflow-x-auto">
                     <table class="w-full">
                         <thead class="gradient-bg text-white">
                             <tr>
-                                <th class="px-6 py-4 text-left">Peringkat</th>
                                 <th class="px-6 py-4 text-left">Kabupaten/Kota</th>
                                 <th class="px-6 py-4 text-center">🥇 Emas</th>
                                 <th class="px-6 py-4 text-center">🥈 Perak</th>
@@ -220,151 +263,211 @@
                                 <th class="px-6 py-4 text-center">Aksi</th>
                             </tr>
                         </thead>
-                        <tbody id="tabel-medali">
-                            <!-- Data medali akan ditampilkan di sini -->
+                        <tbody id="admin-medali-table">
+                            <!-- Medali data will be populated here -->
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
 
-        <!-- Kelola Jadwal Tab -->
-        <div id="admin-content-jadwal" class="admin-tab-content hidden">
+        <!-- Jadwal Management Tab -->
+        <div id="content-jadwal" class="tab-content hidden">
             <div class="mb-6">
-                <h2 class="text-3xl font-bold text-white mb-2">Kelola Jadwal Pertandingan</h2>
-                <p class="text-blue-100">Tambah atau edit jadwal pertandingan</p>
+                <h2 class="text-3xl font-bold text-white mb-2">📅 Kelola Jadwal</h2>
+                <p class="text-blue-100">Tambah dan kelola jadwal pertandingan</p>
             </div>
 
-            <!-- Form Tambah Jadwal -->
+            <!-- Add Jadwal Form -->
             <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-                <h3 class="text-xl font-bold mb-4">Tambah Jadwal Baru</h3>
-                <form id="form-jadwal" onsubmit="tambahJadwal(event)">
-                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <h3 class="text-xl font-bold mb-4">➕ Tambah Jadwal Baru</h3>
+                <form id="form-jadwal" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Cabang Olahraga</label>
-                            <input type="text" id="jadwal-cabor" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                            <input type="text" id="jadwal-cabor" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Tanggal</label>
-                            <input type="date" id="jadwal-tanggal" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                            <input type="date" id="jadwal-tanggal" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
                         </div>
                     </div>
-                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Waktu</label>
-                            <input type="time" id="jadwal-waktu" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <input type="time" id="jadwal-waktu" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Venue</label>
-                            <input type="text" id="jadwal-venue" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Keterangan</label>
+                            <select id="jadwal-keterangan" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                <option value="">Pilih Keterangan</option>
+                                <option value="Penyisihan">Penyisihan</option>
+                                <option value="Perempat Final">Perempat Final</option>
+                                <option value="Semifinal">Semifinal</option>
+                                <option value="Final">Final</option>
+                                <option value="Babak Utama">Babak Utama</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Keterangan Tambahan</label>
-                        <textarea id="jadwal-keterangan" rows="2" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Final, Semifinal, Babak Penyisihan, dll."></textarea>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Venue</label>
+                        <input type="text" id="jadwal-venue" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
                     </div>
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium">
-                        📅 Tambah Jadwal
-                    </button>
+                    <div class="flex gap-4">
+                        <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg font-medium">
+                            💾 Simpan Jadwal
+                        </button>
+                        <button type="button" onclick="resetFormJadwal()" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-medium">
+                            🔄 Reset Form
+                        </button>
+                    </div>
                 </form>
-                <div id="success-jadwal" class="success-message">✅ Jadwal berhasil ditambahkan!</div>
             </div>
 
-            <!-- Daftar Jadwal -->
+            <!-- Jadwal List -->
             <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold mb-4">Daftar Jadwal</h3>
-                <div id="daftar-jadwal" class="space-y-4">
-                    <!-- Jadwal akan ditampilkan di sini -->
+                <h3 class="text-xl font-bold mb-4">📋 Daftar Jadwal</h3>
+                <div id="admin-jadwal-list" class="space-y-4">
+                    <!-- Jadwal list will be populated here -->
                 </div>
             </div>
         </div>
 
-        <!-- Kelola Venue Tab -->
-        <div id="admin-content-venue" class="admin-tab-content hidden">
+        <!-- Venue Management Tab -->
+        <div id="content-venue" class="tab-content hidden">
             <div class="mb-6">
-                <h2 class="text-3xl font-bold text-white mb-2">Kelola Venue</h2>
-                <p class="text-blue-100">Tambah atau edit informasi venue pertandingan</p>
+                <h2 class="text-3xl font-bold text-white mb-2">🏟️ Kelola Venue</h2>
+                <p class="text-blue-100">Tambah dan kelola venue pertandingan</p>
             </div>
 
-            <!-- Form Tambah Venue -->
+            <!-- Add Venue Form -->
             <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-                <h3 class="text-xl font-bold mb-4">Tambah Venue Baru</h3>
-                <form id="form-venue" onsubmit="tambahVenue(event)">
-                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <h3 class="text-xl font-bold mb-4">➕ Tambah Venue Baru</h3>
+                <form id="form-venue" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Nama Venue</label>
-                            <input type="text" id="venue-nama" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                            <input type="text" id="venue-nama" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Lokasi</label>
-                            <input type="text" id="venue-lokasi" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                            <input type="text" id="venue-lokasi" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
                         </div>
                     </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Cabang Olahraga</label>
-                        <input type="text" id="venue-cabor" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Pisahkan dengan koma jika lebih dari satu" required>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Cabang Olahraga (pisahkan dengan koma)</label>
+                            <textarea id="venue-cabor" rows="3" placeholder="Contoh: Sepak Bola, Basket, Voli" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Emoji</label>
+                            <input type="text" id="venue-emoji" placeholder="🏟️" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                        </div>
                     </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Emoji/Icon</label>
-                        <input type="text" id="venue-emoji" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Contoh: 🏟️, ⚽, 🏊‍♂️" maxlength="2">
+                    <div class="flex gap-4">
+                        <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg font-medium">
+                            💾 Simpan Venue
+                        </button>
+                        <button type="button" onclick="resetFormVenue()" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-medium">
+                            🔄 Reset Form
+                        </button>
                     </div>
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium">
-                        🏟️ Tambah Venue
-                    </button>
                 </form>
-                <div id="success-venue" class="success-message">✅ Venue berhasil ditambahkan!</div>
             </div>
 
-            <!-- Daftar Venue -->
+            <!-- Venue List -->
             <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold mb-4">Daftar Venue</h3>
-                <div id="daftar-venue" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <!-- Venue akan ditampilkan di sini -->
+                <h3 class="text-xl font-bold mb-4">📋 Daftar Venue</h3>
+                <div id="admin-venue-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Venue list will be populated here -->
                 </div>
             </div>
         </div>
 
-        <!-- Backup Data Tab -->
-        <div id="admin-content-backup" class="admin-tab-content hidden">
+        <!-- Layanan Management Tab -->
+        <div id="content-layanan" class="tab-content hidden">
             <div class="mb-6">
-                <h2 class="text-3xl font-bold text-white mb-2">Backup & Restore Data</h2>
-                <p class="text-blue-100">Backup dan restore semua data website</p>
+                <h2 class="text-3xl font-bold text-white mb-2">🏥 Kelola Layanan</h2>
+                <p class="text-blue-100">Tambah dan kelola kontak layanan KONI Kabupaten Tapin</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Backup -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-bold mb-4">💾 Backup Data</h3>
-                    <p class="text-gray-600 mb-4">Download semua data dalam format JSON untuk backup.</p>
-                    <button onclick="backupData()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium w-full">
-                        📥 Download Backup
-                    </button>
-                </div>
+            <!-- Add Layanan Form -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h3 class="text-xl font-bold mb-4">➕ Tambah Layanan Baru</h3>
+                <form id="form-layanan" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Kategori</label>
+                            <select id="layanan-kategori" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                <option value="">Pilih Kategori</option>
+                                <option value="SEKRETARIAT">Sekretariat</option>
+                                <option value="TIM KESEHATAN">Tim Kesehatan</option>
+                                <option value="KEAMANAN">Keamanan</option>
+                                <option value="TIM MONEV">Tim Monev</option>
+                                <option value="TRANSPORTASI">Transportasi</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Nama Lengkap</label>
+                            <input type="text" id="layanan-nama" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Jabatan</label>
+                            <input type="text" id="layanan-jabatan" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Handphone</label>
+                            <input type="tel" id="layanan-handphone" placeholder="0812-3456-7890" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Alamat</label>
+                        <textarea id="layanan-alamat" rows="2" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email (opsional)</label>
+                            <input type="email" id="layanan-email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Emoji</label>
+                            <input type="text" id="layanan-emoji" placeholder="👨‍⚕️" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional fields based on category -->
+                    <div id="additional-fields" class="space-y-4">
+                        <!-- Dynamic fields will be added here -->
+                    </div>
 
-                <!-- Restore -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-bold mb-4">📤 Restore Data</h3>
-                    <p class="text-gray-600 mb-4">Upload file backup untuk mengembalikan data.</p>
-                    <input type="file" id="restore-file" accept=".json" class="w-full px-3 py-2 border border-gray-300 rounded-lg mb-4">
-                    <button onclick="restoreData()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium w-full">
-                        📤 Restore Data
-                    </button>
-                </div>
+                    <div class="flex gap-4">
+                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium">
+                            💾 Simpan Layanan
+                        </button>
+                        <button type="button" onclick="resetFormLayanan()" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-medium">
+                            🔄 Reset Form
+                        </button>
+                    </div>
+                </form>
             </div>
 
-            <!-- Export Options -->
-            <div class="bg-white rounded-lg shadow-md p-6 mt-6">
-                <h3 class="text-xl font-bold mb-4">📊 Export Data</h3>
-                <div class="grid md:grid-cols-3 gap-4">
-                    <button onclick="exportBerita()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium">
-                        📰 Export Berita
-                    </button>
-                    <button onclick="exportMedali()" class="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-lg font-medium">
-                        🏆 Export Medali
-                    </button>
-                    <button onclick="exportJadwal()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium">
-                        📅 Export Jadwal
-                    </button>
+            <!-- Layanan List -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold mb-4">📋 Daftar Layanan</h3>
+                <div class="mb-4">
+                    <select id="filter-layanan-kategori" class="px-3 py-2 border border-gray-300 rounded-lg" onchange="filterLayananAdmin()">
+                        <option value="">Semua Kategori</option>
+                        <option value="SEKRETARIAT">Sekretariat</option>
+                        <option value="TIM KESEHATAN">Tim Kesehatan</option>
+                        <option value="KEAMANAN">Keamanan</option>
+                        <option value="TIM MONEV">Tim Monev</option>
+                        <option value="TRANSPORTASI">Transportasi</option>
+                    </select>
+                </div>
+                <div id="admin-layanan-list" class="space-y-4">
+                    <!-- Layanan list will be populated here -->
                 </div>
             </div>
         </div>
@@ -374,238 +477,84 @@
     <footer class="gradient-bg text-white mt-16">
         <div class="container mx-auto px-4 py-8">
             <div class="text-center">
-                <h3 class="text-xl font-bold mb-2">Admin Panel - Porprov Kalsel 2025</h3>
-                <p class="text-blue-100 mb-4">Kelola data website dengan mudah dan aman</p>
-                <div class="text-sm text-blue-200">
-                    <p>⚠️ Pastikan untuk melakukan backup data secara berkala</p>
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <span class="text-2xl">⚙️</span>
+                    <span class="font-bold text-lg">Admin Panel - KONI Kabupaten Tapin</span>
                 </div>
+                <p class="text-blue-100">&copy; 2025 KONI Kabupaten Tapin. Sistem Manajemen Data.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Login Modal -->
-    <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-4">
-            <div class="text-center mb-6">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span class="text-3xl">🔐</span>
-                </div>
-                <h2 class="text-2xl font-bold text-gray-800">Login Admin</h2>
-                <p class="text-gray-600 mt-2">Masukkan password untuk mengakses admin panel</p>
-            </div>
-            
-            <form id="login-form" onsubmit="handleLogin(event)">
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Username</label>
-                    <input type="text" id="login-username" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Masukkan username" required>
-                </div>
-                <div class="mb-6">
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
-                    <input type="password" id="login-password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Masukkan password" required>
-                </div>
-                <div id="login-error" class="text-red-600 text-sm mb-4 hidden">
-                    ❌ Username atau password salah!
-                </div>
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-colors">
-                    🔓 Login
-                </button>
-            </form>
-            
-            <div class="mt-6 p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold text-gray-800 mb-2">📋 Akun Default:</h4>
-                <div class="text-sm text-gray-600 space-y-1">
-                    <p><strong>Username:</strong> admin</p>
-                    <p><strong>Password:</strong> porprov2025</p>
-                </div>
-                <p class="text-xs text-gray-500 mt-2">💡 Ganti password setelah login pertama</p>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Security Configuration
-        const DEFAULT_CREDENTIALS = {
-            username: 'admin',
-            password: 'porprov2025'
-        };
-        
-        // Get custom credentials from localStorage or use default
-        const getCredentials = () => {
-            const saved = localStorage.getItem('porprov-credentials');
-            return saved ? JSON.parse(saved) : DEFAULT_CREDENTIALS;
-        };
-        
-        // Check if user is logged in
-        const isLoggedIn = () => {
-            const loginTime = localStorage.getItem('porprov-login-time');
-            if (!loginTime) return false;
-            
-            // Session expires after 8 hours
-            const sessionDuration = 8 * 60 * 60 * 1000; // 8 hours in milliseconds
-            const now = new Date().getTime();
-            
-            if (now - parseInt(loginTime) > sessionDuration) {
-                localStorage.removeItem('porprov-login-time');
-                return false;
-            }
-            
-            return true;
-        };
-        
-        // Handle login
-        function handleLogin(event) {
-            event.preventDefault();
-            
-            const username = document.getElementById('login-username').value;
-            const password = document.getElementById('login-password').value;
-            const credentials = getCredentials();
-            
-            if (username === credentials.username && password === credentials.password) {
-                // Login successful
-                localStorage.setItem('porprov-login-time', new Date().getTime().toString());
-                document.getElementById('login-modal').style.display = 'none';
-                document.getElementById('login-error').classList.add('hidden');
-                
-                // Show success message
-                showLoginSuccess();
-            } else {
-                // Login failed
-                document.getElementById('login-error').classList.remove('hidden');
-                document.getElementById('login-password').value = '';
-                document.getElementById('login-password').focus();
-            }
-        }
-        
-        // Show login success message
-        function showLoginSuccess() {
-            const successDiv = document.createElement('div');
-            successDiv.className = 'fixed top-4 right-4 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50';
-            successDiv.innerHTML = '✅ Login berhasil! Selamat datang, Admin.';
-            document.body.appendChild(successDiv);
-            
-            setTimeout(() => {
-                successDiv.remove();
-            }, 3000);
-        }
-        
-        // Logout function
-        function logout() {
-            if (confirm('Yakin ingin logout?')) {
-                localStorage.removeItem('porprov-login-time');
-                location.reload();
-            }
-        }
-        
-        // Change password function
-        function changePassword() {
-            const currentPassword = prompt('Masukkan password saat ini:');
-            if (!currentPassword) return;
-            
-            const credentials = getCredentials();
-            if (currentPassword !== credentials.password) {
-                alert('❌ Password saat ini salah!');
-                return;
-            }
-            
-            const newPassword = prompt('Masukkan password baru:');
-            if (!newPassword || newPassword.length < 6) {
-                alert('❌ Password baru minimal 6 karakter!');
-                return;
-            }
-            
-            const confirmPassword = prompt('Konfirmasi password baru:');
-            if (newPassword !== confirmPassword) {
-                alert('❌ Konfirmasi password tidak cocok!');
-                return;
-            }
-            
-            // Save new credentials
-            const newCredentials = {
-                username: credentials.username,
-                password: newPassword
-            };
-            localStorage.setItem('porprov-credentials', JSON.stringify(newCredentials));
-            alert('✅ Password berhasil diubah!');
-        }
-        
-        // Initialize security
-        function initSecurity() {
-            if (!isLoggedIn()) {
-                document.getElementById('login-modal').style.display = 'flex';
-                return false;
-            } else {
-                document.getElementById('login-modal').style.display = 'none';
-                return true;
-            }
-        }
-
         // Data Storage
         let dataBerita = JSON.parse(localStorage.getItem('porprov-berita') || '[]');
         let dataMedali = JSON.parse(localStorage.getItem('porprov-medali') || '{}');
         let dataJadwal = JSON.parse(localStorage.getItem('porprov-jadwal') || '[]');
         let dataVenue = JSON.parse(localStorage.getItem('porprov-venue') || '[]');
-
-        // Initialize default medal data
-        if (Object.keys(dataMedali).length === 0) {
-            dataMedali = {
-                'Banjarmasin': { emas: 15, perak: 12, perunggu: 8 },
-                'Banjarbaru': { emas: 12, perak: 10, perunggu: 9 },
-                'Tapin': { emas: 8, perak: 7, perunggu: 6 },
-                'Hulu Sungai Selatan': { emas: 6, perak: 8, perunggu: 5 },
-                'Tanah Laut': { emas: 0, perak: 0, perunggu: 0 },
-                'Balangan': { emas: 0, perak: 0, perunggu: 0 },
-                'Banjar': { emas: 0, perak: 0, perunggu: 0 },
-                'Barito Kuala': { emas: 0, perak: 0, perunggu: 0 },
-                'Hulu Sungai Tengah': { emas: 0, perak: 0, perunggu: 0 },
-                'Hulu Sungai Utara': { emas: 0, perak: 0, perunggu: 0 },
-                'Kotabaru': { emas: 0, perak: 0, perunggu: 0 },
-                'Tabalong': { emas: 0, perak: 0, perunggu: 0 },
-                'Tanah Bumbu': { emas: 0, perak: 0, perunggu: 0 }
-            };
-            localStorage.setItem('porprov-medali', JSON.stringify(dataMedali));
-        }
+        let dataLayanan = JSON.parse(localStorage.getItem('koni-layanan') || '[]');
 
         // Tab Management
-        function showAdminTab(tabName) {
-            document.querySelectorAll('.admin-tab-content').forEach(c => c.classList.add('hidden'));
-            document.querySelectorAll('.admin-tab-button').forEach(t => {
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+            document.querySelectorAll('.tab-button').forEach(t => {
                 t.classList.remove('tab-active');
                 t.classList.add('text-gray-600', 'hover:text-blue-600');
             });
-            document.getElementById('admin-content-' + tabName).classList.remove('hidden');
-            const activeTab = document.getElementById('admin-tab-' + tabName);
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            const activeTab = document.getElementById('tab-' + tabName);
             activeTab.classList.add('tab-active');
             activeTab.classList.remove('text-gray-600', 'hover:text-blue-600');
 
             // Load data when switching tabs
-            if (tabName === 'berita') loadBerita();
-            if (tabName === 'medali') loadMedali();
-            if (tabName === 'jadwal') loadJadwal();
-            if (tabName === 'venue') loadVenue();
+            if (tabName === 'dashboard') loadDashboard();
+            if (tabName === 'berita') loadAdminBerita();
+            if (tabName === 'medali') loadAdminMedali();
+            if (tabName === 'jadwal') loadAdminJadwal();
+            if (tabName === 'venue') loadAdminVenue();
+            if (tabName === 'layanan') loadAdminLayanan();
+        }
+
+        // Dashboard Functions
+        function loadDashboard() {
+            document.getElementById('total-berita').textContent = dataBerita.length;
+            
+            let totalMedali = 0;
+            Object.values(dataMedali).forEach(medali => {
+                totalMedali += medali.emas + medali.perak + medali.perunggu;
+            });
+            document.getElementById('total-medali-dashboard').textContent = totalMedali;
+            document.getElementById('total-jadwal').textContent = dataJadwal.length;
+            document.getElementById('total-layanan').textContent = dataLayanan.length;
         }
 
         // Berita Management
-        function tambahBerita(event) {
-            event.preventDefault();
-            const berita = {
+        document.getElementById('form-berita').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const newBerita = {
                 id: Date.now(),
                 judul: document.getElementById('berita-judul').value,
                 kategori: document.getElementById('berita-kategori').value,
                 ringkasan: document.getElementById('berita-ringkasan').value,
                 isi: document.getElementById('berita-isi').value,
-                tanggal: new Date().toLocaleDateString('id-ID')
+                tanggal: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
             };
             
-            dataBerita.unshift(berita);
+            dataBerita.unshift(newBerita);
             localStorage.setItem('porprov-berita', JSON.stringify(dataBerita));
             
+            alert('✅ Berita berhasil ditambahkan!');
+            resetFormBerita();
+            loadAdminBerita();
+        });
+
+        function resetFormBerita() {
             document.getElementById('form-berita').reset();
-            showSuccess('success-berita');
-            loadBerita();
         }
 
-        function loadBerita() {
-            const container = document.getElementById('daftar-berita');
+        function loadAdminBerita() {
+            const container = document.getElementById('admin-berita-list');
             container.innerHTML = '';
             
             dataBerita.forEach(berita => {
@@ -614,92 +563,87 @@
                 div.innerHTML = `
                     <div class="flex justify-between items-start mb-2">
                         <h4 class="font-bold text-lg">${berita.judul}</h4>
-                        <div class="flex space-x-2">
-                            <button onclick="editBerita(${berita.id})" class="text-blue-600 hover:text-blue-800 text-sm">✏️ Edit</button>
-                            <button onclick="hapusBerita(${berita.id})" class="text-red-600 hover:text-red-800 text-sm">🗑️ Hapus</button>
+                        <div class="flex gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">${berita.kategori}</span>
+                            <button onclick="deleteBerita(${berita.id})" class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded text-sm">
+                                🗑️ Hapus
+                            </button>
                         </div>
                     </div>
-                    <span class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs mb-2">${berita.kategori}</span>
                     <p class="text-gray-600 text-sm mb-2">${berita.ringkasan}</p>
-                    <p class="text-xs text-gray-500">${berita.tanggal}</p>
+                    <p class="text-gray-500 text-xs">${berita.tanggal}</p>
                 `;
                 container.appendChild(div);
             });
         }
 
-        function hapusBerita(id) {
+        function deleteBerita(id) {
             if (confirm('Yakin ingin menghapus berita ini?')) {
                 dataBerita = dataBerita.filter(b => b.id !== id);
                 localStorage.setItem('porprov-berita', JSON.stringify(dataBerita));
-                loadBerita();
+                loadAdminBerita();
+                alert('✅ Berita berhasil dihapus!');
             }
         }
 
-        // Medal Management
-        function updateMedali(event) {
-            event.preventDefault();
+        // Medali Management
+        document.getElementById('form-medali').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
             const kabupaten = document.getElementById('medali-kabupaten').value;
-            const emas = parseInt(document.getElementById('medali-emas').value) || 0;
-            const perak = parseInt(document.getElementById('medali-perak').value) || 0;
-            const perunggu = parseInt(document.getElementById('medali-perunggu').value) || 0;
+            const emas = parseInt(document.getElementById('medali-emas').value);
+            const perak = parseInt(document.getElementById('medali-perak').value);
+            const perunggu = parseInt(document.getElementById('medali-perunggu').value);
             
-            if (!dataMedali[kabupaten]) {
-                dataMedali[kabupaten] = { emas: 0, perak: 0, perunggu: 0 };
-            }
-            
-            dataMedali[kabupaten].emas += emas;
-            dataMedali[kabupaten].perak += perak;
-            dataMedali[kabupaten].perunggu += perunggu;
-            
+            dataMedali[kabupaten] = { emas, perak, perunggu };
             localStorage.setItem('porprov-medali', JSON.stringify(dataMedali));
             
+            alert('✅ Data medali berhasil diupdate!');
+            resetFormMedali();
+            loadAdminMedali();
+        });
+
+        function resetFormMedali() {
             document.getElementById('form-medali').reset();
-            showSuccess('success-medali');
-            loadMedali();
         }
 
-        function loadMedali() {
-            const tbody = document.getElementById('tabel-medali');
+        function loadAdminMedali() {
+            const tbody = document.getElementById('admin-medali-table');
             tbody.innerHTML = '';
             
-            // Sort by total medals
-            const sortedData = Object.entries(dataMedali).sort((a, b) => {
-                const totalA = a[1].emas + a[1].perak + a[1].perunggu;
-                const totalB = b[1].emas + b[1].perak + b[1].perunggu;
-                return totalB - totalA || b[1].emas - a[1].emas;
-            });
-            
-            sortedData.forEach(([kabupaten, medali], index) => {
+            Object.entries(dataMedali).forEach(([kabupaten, medali]) => {
                 const total = medali.emas + medali.perak + medali.perunggu;
                 const tr = document.createElement('tr');
                 tr.className = 'border-b hover:bg-gray-50';
                 tr.innerHTML = `
-                    <td class="px-6 py-4 font-bold">${index + 1}</td>
                     <td class="px-6 py-4 font-semibold">${kabupaten}</td>
-                    <td class="px-6 py-4 text-center">${medali.emas}</td>
-                    <td class="px-6 py-4 text-center">${medali.perak}</td>
-                    <td class="px-6 py-4 text-center">${medali.perunggu}</td>
+                    <td class="px-6 py-4 text-center font-bold text-yellow-600">${medali.emas}</td>
+                    <td class="px-6 py-4 text-center font-bold text-gray-500">${medali.perak}</td>
+                    <td class="px-6 py-4 text-center font-bold text-orange-600">${medali.perunggu}</td>
                     <td class="px-6 py-4 text-center font-bold">${total}</td>
                     <td class="px-6 py-4 text-center">
-                        <button onclick="resetMedali('${kabupaten}')" class="text-red-600 hover:text-red-800 text-sm">🔄 Reset</button>
+                        <button onclick="editMedali('${kabupaten}')" class="bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded text-sm mr-1">
+                            ✏️ Edit
+                        </button>
                     </td>
                 `;
                 tbody.appendChild(tr);
             });
         }
 
-        function resetMedali(kabupaten) {
-            if (confirm(`Reset semua medali ${kabupaten}?`)) {
-                dataMedali[kabupaten] = { emas: 0, perak: 0, perunggu: 0 };
-                localStorage.setItem('porprov-medali', JSON.stringify(dataMedali));
-                loadMedali();
-            }
+        function editMedali(kabupaten) {
+            const medali = dataMedali[kabupaten];
+            document.getElementById('medali-kabupaten').value = kabupaten;
+            document.getElementById('medali-emas').value = medali.emas;
+            document.getElementById('medali-perak').value = medali.perak;
+            document.getElementById('medali-perunggu').value = medali.perunggu;
         }
 
-        // Schedule Management
-        function tambahJadwal(event) {
-            event.preventDefault();
-            const jadwal = {
+        // Jadwal Management
+        document.getElementById('form-jadwal').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const newJadwal = {
                 id: Date.now(),
                 cabor: document.getElementById('jadwal-cabor').value,
                 tanggal: document.getElementById('jadwal-tanggal').value,
@@ -708,17 +652,20 @@
                 keterangan: document.getElementById('jadwal-keterangan').value
             };
             
-            dataJadwal.push(jadwal);
-            dataJadwal.sort((a, b) => new Date(a.tanggal) - new Date(b.tanggal));
+            dataJadwal.push(newJadwal);
             localStorage.setItem('porprov-jadwal', JSON.stringify(dataJadwal));
             
+            alert('✅ Jadwal berhasil ditambahkan!');
+            resetFormJadwal();
+            loadAdminJadwal();
+        });
+
+        function resetFormJadwal() {
             document.getElementById('form-jadwal').reset();
-            showSuccess('success-jadwal');
-            loadJadwal();
         }
 
-        function loadJadwal() {
-            const container = document.getElementById('daftar-jadwal');
+        function loadAdminJadwal() {
+            const container = document.getElementById('admin-jadwal-list');
             container.innerHTML = '';
             
             dataJadwal.forEach(jadwal => {
@@ -727,45 +674,60 @@
                 div.innerHTML = `
                     <div class="flex justify-between items-start mb-2">
                         <h4 class="font-bold text-lg">${jadwal.cabor}</h4>
-                        <button onclick="hapusJadwal(${jadwal.id})" class="text-red-600 hover:text-red-800 text-sm">🗑️ Hapus</button>
+                        <div class="flex gap-2">
+                            ${jadwal.keterangan ? `<span class="bg-red-100 text-red-800 px-2 py-1 rounded text-sm">${jadwal.keterangan}</span>` : ''}
+                            <button onclick="deleteJadwal(${jadwal.id})" class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded text-sm">
+                                🗑️ Hapus
+                            </button>
+                        </div>
                     </div>
-                    <p class="text-gray-600 text-sm">📅 ${new Date(jadwal.tanggal).toLocaleDateString('id-ID')} ${jadwal.waktu ? '⏰ ' + jadwal.waktu : ''}</p>
-                    <p class="text-gray-600 text-sm">📍 ${jadwal.venue}</p>
-                    ${jadwal.keterangan ? `<p class="text-gray-500 text-sm mt-1">${jadwal.keterangan}</p>` : ''}
+                    <div class="text-gray-600 text-sm space-y-1">
+                        <p>📅 ${new Date(jadwal.tanggal).toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                        ${jadwal.waktu ? `<p>⏰ ${jadwal.waktu} WIB</p>` : ''}
+                        <p>📍 ${jadwal.venue}</p>
+                    </div>
                 `;
                 container.appendChild(div);
             });
         }
 
-        function hapusJadwal(id) {
+        function deleteJadwal(id) {
             if (confirm('Yakin ingin menghapus jadwal ini?')) {
                 dataJadwal = dataJadwal.filter(j => j.id !== id);
                 localStorage.setItem('porprov-jadwal', JSON.stringify(dataJadwal));
-                loadJadwal();
+                loadAdminJadwal();
+                alert('✅ Jadwal berhasil dihapus!');
             }
         }
 
         // Venue Management
-        function tambahVenue(event) {
-            event.preventDefault();
-            const venue = {
+        document.getElementById('form-venue').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const cabor = document.getElementById('venue-cabor').value.split(',').map(c => c.trim());
+            
+            const newVenue = {
                 id: Date.now(),
                 nama: document.getElementById('venue-nama').value,
                 lokasi: document.getElementById('venue-lokasi').value,
-                cabor: document.getElementById('venue-cabor').value.split(',').map(c => c.trim()),
-                emoji: document.getElementById('venue-emoji').value || '🏟️'
+                cabor: cabor,
+                emoji: document.getElementById('venue-emoji').value
             };
             
-            dataVenue.push(venue);
+            dataVenue.push(newVenue);
             localStorage.setItem('porprov-venue', JSON.stringify(dataVenue));
             
+            alert('✅ Venue berhasil ditambahkan!');
+            resetFormVenue();
+            loadAdminVenue();
+        });
+
+        function resetFormVenue() {
             document.getElementById('form-venue').reset();
-            showSuccess('success-venue');
-            loadVenue();
         }
 
-        function loadVenue() {
-            const container = document.getElementById('daftar-venue');
+        function loadAdminVenue() {
+            const container = document.getElementById('admin-venue-list');
             container.innerHTML = '';
             
             dataVenue.forEach(venue => {
@@ -775,127 +737,185 @@
                     <div class="flex justify-between items-start mb-2">
                         <div class="flex items-center">
                             <span class="text-2xl mr-2">${venue.emoji}</span>
-                            <div>
-                                <h4 class="font-bold">${venue.nama}</h4>
-                                <p class="text-gray-600 text-sm">${venue.lokasi}</p>
-                            </div>
+                            <h4 class="font-bold">${venue.nama}</h4>
                         </div>
-                        <button onclick="hapusVenue(${venue.id})" class="text-red-600 hover:text-red-800 text-sm">🗑️</button>
+                        <button onclick="deleteVenue(${venue.id})" class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded text-sm">
+                            🗑️ Hapus
+                        </button>
                     </div>
-                    <div class="flex flex-wrap gap-1 mt-2">
-                        ${venue.cabor.map(c => `<span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">${c}</span>`).join('')}
+                    <p class="text-gray-600 text-sm mb-2">📍 ${venue.lokasi}</p>
+                    <div class="flex flex-wrap gap-1">
+                        ${venue.cabor.map(cabor => `<span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">${cabor}</span>`).join('')}
                     </div>
                 `;
                 container.appendChild(div);
             });
         }
 
-        function hapusVenue(id) {
+        function deleteVenue(id) {
             if (confirm('Yakin ingin menghapus venue ini?')) {
                 dataVenue = dataVenue.filter(v => v.id !== id);
                 localStorage.setItem('porprov-venue', JSON.stringify(dataVenue));
-                loadVenue();
+                loadAdminVenue();
+                alert('✅ Venue berhasil dihapus!');
             }
         }
 
-        // Backup & Export Functions
-        function backupData() {
-            const allData = {
-                berita: dataBerita,
-                medali: dataMedali,
-                jadwal: dataJadwal,
-                venue: dataVenue,
-                timestamp: new Date().toISOString()
-            };
+        // Layanan Management
+        document.getElementById('layanan-kategori').addEventListener('change', function() {
+            const kategori = this.value;
+            const additionalFields = document.getElementById('additional-fields');
+            additionalFields.innerHTML = '';
             
-            const dataStr = JSON.stringify(allData, null, 2);
-            const dataBlob = new Blob([dataStr], { type: 'application/json' });
-            
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(dataBlob);
-            link.download = `porprov-backup-${new Date().toISOString().split('T')[0]}.json`;
-            link.click();
-        }
-
-        function restoreData() {
-            const fileInput = document.getElementById('restore-file');
-            const file = fileInput.files[0];
-            
-            if (!file) {
-                alert('Pilih file backup terlebih dahulu!');
-                return;
+            if (kategori === 'TIM KESEHATAN') {
+                additionalFields.innerHTML = `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Regional Kecamatan</label>
+                            <input type="text" id="layanan-regional" placeholder="Kecamatan Rantau" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Spesialisasi</label>
+                            <input type="text" id="layanan-spesialisasi" placeholder="Dokter Umum & Olahraga" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                `;
+            } else if (kategori === 'KEAMANAN') {
+                additionalFields.innerHTML = `
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Instansi</label>
+                        <input type="text" id="layanan-instansi" placeholder="Kepolisian Resort Tapin" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                    </div>
+                `;
+            } else if (kategori === 'TIM MONEV') {
+                additionalFields.innerHTML = `
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Keahlian</label>
+                        <input type="text" id="layanan-keahlian" placeholder="Manajemen Olahraga" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                    </div>
+                `;
+            } else if (kategori === 'TRANSPORTASI') {
+                additionalFields.innerHTML = `
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Armada</label>
+                        <input type="text" id="layanan-armada" placeholder="15 Unit Bus & 8 Unit Minibus" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                    </div>
+                `;
             }
+        });
+
+        document.getElementById('form-layanan').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const data = JSON.parse(e.target.result);
-                    
-                    if (confirm('Restore data akan mengganti semua data yang ada. Lanjutkan?')) {
-                        dataBerita = data.berita || [];
-                        dataMedali = data.medali || {};
-                        dataJadwal = data.jadwal || [];
-                        dataVenue = data.venue || [];
-                        
-                        localStorage.setItem('porprov-berita', JSON.stringify(dataBerita));
-                        localStorage.setItem('porprov-medali', JSON.stringify(dataMedali));
-                        localStorage.setItem('porprov-jadwal', JSON.stringify(dataJadwal));
-                        localStorage.setItem('porprov-venue', JSON.stringify(dataVenue));
-                        
-                        alert('Data berhasil di-restore!');
-                        location.reload();
-                    }
-                } catch (error) {
-                    alert('File backup tidak valid!');
-                }
+            const newLayanan = {
+                id: Date.now(),
+                kategori: document.getElementById('layanan-kategori').value,
+                nama: document.getElementById('layanan-nama').value,
+                jabatan: document.getElementById('layanan-jabatan').value,
+                handphone: document.getElementById('layanan-handphone').value,
+                alamat: document.getElementById('layanan-alamat').value,
+                email: document.getElementById('layanan-email').value,
+                emoji: document.getElementById('layanan-emoji').value
             };
-            reader.readAsText(file);
+            
+            // Add additional fields based on category
+            const regional = document.getElementById('layanan-regional');
+            const spesialisasi = document.getElementById('layanan-spesialisasi');
+            const instansi = document.getElementById('layanan-instansi');
+            const keahlian = document.getElementById('layanan-keahlian');
+            const armada = document.getElementById('layanan-armada');
+            
+            if (regional) newLayanan.regional = regional.value;
+            if (spesialisasi) newLayanan.spesialisasi = spesialisasi.value;
+            if (instansi) newLayanan.instansi = instansi.value;
+            if (keahlian) newLayanan.keahlian = keahlian.value;
+            if (armada) newLayanan.armada = armada.value;
+            
+            dataLayanan.push(newLayanan);
+            localStorage.setItem('koni-layanan', JSON.stringify(dataLayanan));
+            
+            alert('✅ Layanan berhasil ditambahkan!');
+            resetFormLayanan();
+            loadAdminLayanan();
+        });
+
+        function resetFormLayanan() {
+            document.getElementById('form-layanan').reset();
+            document.getElementById('additional-fields').innerHTML = '';
         }
 
-        function exportBerita() {
-            const dataStr = JSON.stringify(dataBerita, null, 2);
-            downloadFile(dataStr, 'porprov-berita.json');
+        function loadAdminLayanan() {
+            const container = document.getElementById('admin-layanan-list');
+            container.innerHTML = '';
+            
+            const filteredLayanan = getFilteredLayanan();
+            
+            filteredLayanan.forEach(layanan => {
+                const div = document.createElement('div');
+                div.className = 'border border-gray-200 rounded-lg p-4';
+                
+                let additionalInfo = '';
+                if (layanan.regional) additionalInfo += `<p class="text-sm text-gray-600">🏥 Regional: ${layanan.regional}</p>`;
+                if (layanan.spesialisasi) additionalInfo += `<p class="text-sm text-gray-600">⚕️ Spesialisasi: ${layanan.spesialisasi}</p>`;
+                if (layanan.instansi) additionalInfo += `<p class="text-sm text-gray-600">🏢 Instansi: ${layanan.instansi}</p>`;
+                if (layanan.keahlian) additionalInfo += `<p class="text-sm text-gray-600">🎯 Keahlian: ${layanan.keahlian}</p>`;
+                if (layanan.armada) additionalInfo += `<p class="text-sm text-gray-600">🚗 Armada: ${layanan.armada}</p>`;
+                
+                div.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-2">${layanan.emoji}</span>
+                            <div>
+                                <h4 class="font-bold">${layanan.nama}</h4>
+                                <p class="text-blue-600 text-sm">${layanan.jabatan}</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">${layanan.kategori}</span>
+                            <button onclick="deleteLayanan(${layanan.id})" class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded text-sm">
+                                🗑️ Hapus
+                            </button>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 text-sm space-y-1">
+                        <p>📱 ${layanan.handphone}</p>
+                        <p>📍 ${layanan.alamat}</p>
+                        ${layanan.email ? `<p>📧 ${layanan.email}</p>` : ''}
+                        ${additionalInfo}
+                    </div>
+                `;
+                container.appendChild(div);
+            });
         }
 
-        function exportMedali() {
-            const dataStr = JSON.stringify(dataMedali, null, 2);
-            downloadFile(dataStr, 'porprov-medali.json');
+        function getFilteredLayanan() {
+            const filter = document.getElementById('filter-layanan-kategori').value;
+            return filter ? dataLayanan.filter(l => l.kategori === filter) : dataLayanan;
         }
 
-        function exportJadwal() {
-            const dataStr = JSON.stringify(dataJadwal, null, 2);
-            downloadFile(dataStr, 'porprov-jadwal.json');
+        function filterLayananAdmin() {
+            loadAdminLayanan();
         }
 
-        function downloadFile(content, filename) {
-            const blob = new Blob([content], { type: 'application/json' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = filename;
-            link.click();
-        }
-
-        // Utility Functions
-        function showSuccess(elementId) {
-            const element = document.getElementById(elementId);
-            element.style.display = 'block';
-            setTimeout(() => {
-                element.style.display = 'none';
-            }, 3000);
+        function deleteLayanan(id) {
+            if (confirm('Yakin ingin menghapus layanan ini?')) {
+                dataLayanan = dataLayanan.filter(l => l.id !== id);
+                localStorage.setItem('koni-layanan', JSON.stringify(dataLayanan));
+                loadAdminLayanan();
+                alert('✅ Layanan berhasil dihapus!');
+            }
         }
 
         // Initialize
-        document.getElementById('admin-date').textContent = '🗓️ ' + new Date().toLocaleDateString('id-ID', {
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('id-ID', {
             weekday: 'long',
-            year: 'numeric',
+            day: 'numeric',
             month: 'long',
-            day: 'numeric'
+            year: 'numeric'
         });
 
-        // Initialize security and load data
-        if (initSecurity()) {
-            showAdminTab('berita');
-        }
+        // Load dashboard on page load
+        loadDashboard();
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9851db11a5def932',t:'MTc1ODg4MDIxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98536828b33c40e0',t:'MTc1ODg5NjQ3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
