@@ -85,7 +85,7 @@
         <!-- Section 1: Hero & Countdown (Now showing LIVE status) -->
         <section id="beranda" class="text-center py-16 bg-slate-800 rounded-xl shadow-2xl mb-12 border-4 border-yellow-600/50">
             <p class="text-yellow-500 text-sm uppercase tracking-widest mb-2">Komite Olahraga Nasional Indonesia Kabupaten Tapin</p>
-            <h2 class="text-5xl md:text-7xl font-extrabold mb-8">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-8"> <!-- UPDATED SIZE -->
                 PEKAN OLAHRAGA PROVINSI <br>
                 <span class="gold-gradient">KALIMANTAN SELATAN 2025</span>
             </h2>
@@ -99,7 +99,7 @@
         <!-- Section 2: Key Statistics -->
         <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             <div class="p-6 rounded-xl countdown-tile text-center">
-                <p class="text-4xl font-bold text-yellow-500" id="stat-medali">316</p>
+                <p class="text-4xl font-bold text-yellow-500" id="stat-medali">323</p> <!-- UPDATED TOTAL -->
                 <p class="text-sm uppercase tracking-wide text-slate-400 mt-1">Total Medali</p>
             </div>
             <div class="p-6 rounded-xl countdown-tile text-center">
@@ -138,7 +138,7 @@
                         <p class="text-4xl font-extrabold text-white mt-1">78</p>
                         <p class="text-xs text-slate-400">Total Medali</p>
                     </div>
-                    <!-- 3rd Place: Kota Banjarbaru -->
+                    <!-- 3rd Place: Kab. Banjarbaru (Dynamically updated by JS) -->
                     <div class="p-4 rounded-xl bg-slate-900 border-b-4 border-amber-800">
                         <span class="text-5xl mb-2 block">🥉</span>
                         <p class="text-xl font-semibold text-amber-700">Kota Banjarbaru</p>
@@ -204,7 +204,7 @@
             </div>
         </section>
         
-        <!-- Prestasi Cabor Tapin -->
+        <!-- Prestasi Cabor Tapin (UPDATED VIA JS) -->
         <section id="prestasi-cabor" class="bg-slate-800 p-6 rounded-xl shadow-2xl mb-12">
             <h3 class="text-3xl font-bold mb-6 border-b border-slate-700 pb-2">🎯 Prestasi Cabor Tapin</h3>
             <p class="text-slate-400 mb-4">Ringkasan perolehan medali Kab. Tapin per Cabang Olahraga.</p>
@@ -339,49 +339,49 @@
         // Data Prestasi Atlet Tapin (10 Emas, 9 Perak, 20 Perunggu = 39 Total)
         const newAthleteData = [
             // Emas (10)
-            { date: "24/10/25", cabor: "LONCAT INDAH", name: "ZIYAD ABQORI RAJENDRA", category: "PRIA", class: "SINGKRON MENARA", medal: '🥇' },
-            { date: "24/10/25", cabor: "LONCAT INDAH", name: "NAVARO ARVAN WIBOWO", category: "PRIA", class: "SINGKRON PAPAN", medal: '🥇' },
-            { date: "25/10/25", cabor: "PANJAT TEBING", name: "M. BADALI, BEN MARQUEZ, M NABIL FIRADAUS", category: "TIM PRIA", class: "SPEED KLASIK 10 M PA", medal: '🥇' },
-            { date: "28/10/25", cabor: "TAEKWONDO", name: "NAJMI TSAQIB", category: "PUTRI", class: "KYORUGI PUTRI UNDER 46Kg", medal: '🥇' },
-            { date: "29/10/25", cabor: "DANCE SPORT", name: "QUENNISKA NAIRA MEYDIRA", category: "PUTRI", class: "DANCE SAMBA PERORANGAN", medal: '🥇' },
-            { date: "29/10/25", cabor: "GULAT", name: "SITI RAISA ADZKIA", category: "PUTRI", class: "GAYA BEBAS 72Kg", medal: '🥇' },
-            { date: "29/10/25", cabor: "PENCAK SILAT", name: "M. FAQHRY ADILMAN SAPUTRA", category: "PUTRA", class: "C PUTRA", medal: '🥇' },
-            { date: "29/10/25", cabor: "PENCAK SILAT", name: "HADI PURNOMO", category: "PUTRA", class: "I PUTRA", medal: '🥇' },
-            { date: "29/10/25", cabor: "PENCAK SILAT", name: "AGUS HASANUDIN", category: "PUTRA", class: "J PUTRA", medal: '🥇' },
-            { date: "29/10/25", cabor: "PENCAK SILAT", name: "BOY VALENTINO", category: "PUTRA", class: "F PUTRA", medal: '🥇' },
-
+            { date: "24/11/25", cabor: "LONCAT INDAH", name: "ZIYAD ABQORI RAJENDRA", category: "PRIA", class: "SINGKRON MENARA", medal: '🥇' },
+            { date: "26/11/25", cabor: "GULAT", name: "ATHAYA FIKRI", category: "PUTRA", class: "GAYA BEBAS 70Kg", medal: '🥇' },
+            { date: "28/11/25", cabor: "GULAT", name: "AHMAD FERDINAND", category: "PUTRA", class: "GAYA BEBAS 65 Kg", medal: '🥇' },
+            { date: "29/11/25", cabor: "TINJU", name: "HEDRA KUMAR", category: "PUTRA", class: "48 Kg", medal: '🥇' },
+            { date: "29/11/25", cabor: "TINJU", name: "MICHAEL JHORICO", category: "PUTRA", class: "57 Kg", medal: '🥇' },
+            { date: "29/11/25", cabor: "TINJU", name: "ANDREW DARPAPUTRA", category: "PUTRA", class: "63,5 Kg", medal: '🥇' },
+            { date: "29/11/25", cabor: "TINJU", name: "YULIUS FERNANDO", category: "PUTRA", class: "71 Kg", medal: '🥇' },
+            { date: "29/11/25", cabor: "TINJU", name: "SINTA BELLA", category: "PUTRI", class: "45 Kg", medal: '🥇' },
+            { date: "29/11/25", cabor: "TINJU", name: "SILPA RAU RATU", category: "PUTRI", class: "57 Kg", medal: '🥇' },
+            { date: "29/11/25", cabor: "TINJU", name: "TRIA AYU NIGNRUM", category: "PUTRI", class: "70 Kg", medal: '🥇' },
+            
             // Perak (9)
-            { date: "25/10/25", cabor: "PANJAT TEBING", name: "MASLIAINI, MAULIDYA KHAIRINA, RIZKINA HUSNUL MARWAH", category: "TIM WANITA", class: "TIM SPEED KLASIK 12 M PI", medal: '🥈' },
-            { date: "25/10/25", cabor: "PANJAT TEBING", name: "MAULIDYA KHAIRINA, MASLIANA, MASLIANI", category: "TIM WANITA", class: "TIM SPEED KLASIK 10 M PI", medal: '🥈' },
-            { date: "26/10/25", cabor: "GULAT", name: "ATHAYA FIKRI", category: "PUTRA", class: "GAYA BEBAS 70Kg", medal: '🥈' },
-            { date: "26/10/25", cabor: "GULAT", name: "MUHAMMAD MAULANA", category: "PUTRA", class: "GAYA BEBAS 57Kg", medal: '🥈' },
-            { date: "26/10/25", cabor: "GULAT", name: "MUHAMMAD ISMAIL", category: "PUTRA", class: "GAYA BEBAS 60Kg", medal: '🥈' },
-            { date: "29/10/25", cabor: "TINJU", name: "FAUZAN RIFAZI", category: "PUTRA", class: "75 Kg", medal: '🥈' },
-            { date: "29/10/25", cabor: "TINJU", name: "HEDRA KUMAR", category: "PUTRA", class: "48 Kg", medal: '🥈' },
-            { date: "29/10/25", cabor: "TINJU", name: "MICHAEL JHORICO", category: "PUTRA", class: "57 Kg", medal: '🥈' },
-            { date: "29/10/25", cabor: "TINJU", name: "ANDREW DARPA", category: "PUTRA", class: "63,5 Kg", medal: '🥈' },
-
+            { date: "24/11/25", cabor: "LONCAT INDAH", name: "NAVARO ARVAN WIBOWO", category: "PRIA", class: "SINGKRON PAPAN", medal: '🥈' },
+            { date: "25/11/25", cabor: "PANJAT TEBING", name: "MASLIAINI, MAULIDYA KHAIRINA, RIZKINA HUSNUL MARWAH", category: "WANITA", class: "TIM SPEED KLASIK 12 M PI", medal: '🥈' },
+            { date: "25/11/25", cabor: "PANJAT TEBING", name: "MAULIDYA KHAIRINA, MASLIANA, MASLIANI", category: "WANITA", class: "TIM SPEED KLASIK 10 M PI", medal: '🥈' },
+            { date: "27/11/25", cabor: "PANJAT TEBING", name: "AHMAD SYARWANI", category: "PUTRA", class: "SPEED WORLD RECORD", medal: '🥈' },
+            { date: "28/11/25", cabor: "GULAT", name: "MUHAMMAD SYARIF", category: "PUTRA", class: "GAYA BEBAS 65 Kg", medal: '🥈' },
+            { date: "29/11/25", cabor: "TINJU", name: "NABIL SAPUTRA", category: "PUTRA", class: "54 Kg", medal: '🥈' },
+            { date: "29/11/25", cabor: "TINJU", name: "ALEXIS DE COSTA", category: "PUTRA", class: "60 Kg", medal: '🥈' },
+            { date: "29/11/25", cabor: "PANAHAN", name: "NUR LAISYA MAYEDA", category: "PUTRI", class: "OLYMPIC ROUND COMPOUND", medal: '🥈' },
+            { date: "29/11/25", cabor: "DANCE SPORT", name: "MARISSA ADHANIS, AISHA MAYSUN AZKY", category: "PUTRI", class: "DUO HIP HOP FEMALE", medal: '🥈' },
+            
             // Perunggu (20)
-            { date: "26/10/25", cabor: "GULAT", name: "MUHAMMAD YAZID", category: "PUTRA", class: "GAYA BEBAS 63Kg", medal: '🥉' },
-            { date: "27/10/25", cabor: "PANJAT TEBING", name: "AHMAD SYARWANI", category: "PUTRA", class: "SPEED WORLD RECORD", medal: '🥉' },
-            { date: "27/10/25", cabor: "PANJAT TEBING", name: "M. SAID, M. REZKY AZHARRELLAY", category: "TIM PUTRA", class: "COMBINED B", medal: '🥉' },
-            { date: "27/10/25", cabor: "PANAHAN", name: "Dewi Agustin Delima", category: "PUTRI", class: "Recurve Putri", medal: '🥉' },
-            { date: "27/10/25", cabor: "GULAT", name: "Bintang Assyufi", category: "PUTRA", class: "65 Kg", medal: '🥉' },
-            { date: "27/10/25", cabor: "GULAT", name: "Muhammad Jikriadi", category: "PUTRA", class: "74 Kg", medal: '🥉' },
-            { date: "28/10/25", cabor: "BOLA TANGAN", name: "TIM PUTRI (Beregu)", category: "PUTRI", class: "Beregu", medal: '🥉' },
-            { date: "28/10/25", cabor: "BOLA TANGAN", name: "TIM PUTRA (Beregu)", category: "PUTRA", class: "Beregu", medal: '🥉' },
-            { date: "28/10/25", cabor: "GULAT", name: "AHMAD FERDINAND", category: "PUTRA", class: "GAYA BEBAS 65 Kg", medal: '🥉' },
-            { date: "28/10/25", cabor: "GULAT", name: "MUHAMMAD SYARIF", category: "PUTRA", class: "GAYA BEBAS 65 Kg", medal: '🥉' },
-            { date: "29/10/25", cabor: "TINJU", name: "YULIUS FERNANDO", category: "PUTRA", class: "71 Kg", medal: '🥉' },
-            { date: "29/10/25", cabor: "TINJU", name: "NABIL SAPUTRA", category: "PUTRA", class: "54 Kg", medal: '🥉' },
-            { date: "29/10/25", cabor: "TINJU", name: "ALEXIS DE COSTA", category: "PUTRA", class: "60 Kg", medal: '🥉' },
-            { date: "29/10/25", cabor: "TINJU", name: "SINTA BELLA", category: "PUTRI", class: "45 Kg", medal: '🥉' },
-            { date: "29/10/25", cabor: "TINJU", name: "SILPA RAU RATU", category: "PUTRI", class: "57 Kg", medal: '🥉' },
-            { date: "29/10/25", cabor: "TINJU", name: "TRIA AYU NIGNRUM", category: "PUTRI", class: "70 Kg", medal: '🥉' },
-            { date: "29/10/25", cabor: "PANAHAN", name: "NUR LAISYA MAYEDA", category: "PUTRI", class: "OLYMPIC ROUND COMPOUND", medal: '🥉' },
-            { date: "29/10/25", cabor: "TAEKWONDO", name: "M. SADDAM AL FALAH", category: "PUTRA", class: "UNDER 74", medal: '🥉' },
-            { date: "29/10/25", cabor: "DANCE SPORT", name: "MARISSA ADHANIS & AISHA MAYSUN AZKY", category: "TIM PUTRI", class: "DUO HIP HOP FEMALE", medal: '🥉' },
-            { date: "29/10/25", cabor: "PENCAK SILAT", name: "ZAHRAH & NOR SIPA", category: "TIM PUTRI", class: "Beregu Putri", medal: '🥉' }, 
+            { date: "25/11/25", cabor: "PANJAT TEBING", name: "M. BADALI, BEN MARQUEZ, M NABIL FIRADAUSNI", category: "PRIA", class: "TIM SPEED KLASIK 10 M PA", medal: '🥉' },
+            { date: "26/11/25", cabor: "GULAT", name: "MUHAMMAD MAULANA", category: "PUTRA", class: "GAYA BEBAS 57Kg", medal: '🥉' },
+            { date: "26/11/25", cabor: "GULAT", name: "MUHAMMAD ISMAIL", category: "PUTRA", class: "GAYA BEBAS 60Kg", medal: '🥉' },
+            { date: "26/11/25", cabor: "GULAT", name: "MUHAMMAD YAZID", category: "PUTRA", class: "GAYA BEBAS 63Kg", medal: '🥉' },
+            { date: "27/11/25", cabor: "PANAHAN", name: "Dewi Agustin Delima", category: "PUTRI", class: "Recurve Putri", medal: '🥉' },
+            { date: "27/11/25", cabor: "GULAT", name: "Bintang assyufi", category: "PUTRA", class: "65 Kg", medal: '🥉' },
+            { date: "27/11/25", cabor: "GULAT", name: "Muhammad Jikriadi", category: "PUTRA", class: "74 Kg", medal: '🥉' },
+            { date: "28/11/25", cabor: "BOLA TANGAN", name: "TIM PUTRI (Beregu)", category: "PUTRI", class: "Beregu", medal: '🥉' },
+            { date: "28/11/25", cabor: "BOLA TANGAN", name: "TIM PUTRA (Beregu)", category: "PUTRA", class: "Beregu", medal: '🥉' },
+            { date: "28/11/25", cabor: "TAEKWONDO", name: "NAJMI TSAQIB", category: "PUTRI", class: "KYORUGI PUTRI UNDER 46Kg", medal: '🥉' },
+            { date: "29/11/25", cabor: "TINJU", name: "FAUZAN RIFAZI", category: "PUTRA", class: "75 Kg", medal: '🥉' },
+            { date: "29/11/25", cabor: "TAEKWONDO", name: "M. SADDAM AL FALAH", category: "PUTRA", class: "UNDER 74", medal: '🥉' },
+            { date: "29/11/25", cabor: "DANCE SPORT", name: "QUENNISKA NAIRA MEYDIRA", category: "PUTRI", class: "DANCE SAMBA PERORANGAN", medal: '🥉' },
+            { date: "29/11/25", cabor: "GULAT", name: "SITI RAISA ADZKIA", category: "PUTRI", class: "72 Kg", medal: '🥉' },
+            { date: "29/11/25", cabor: "PENCAK SILAT", name: "M. FAQHRY ADILMAN SAPUTRA", category: "PUTRA", class: "C PUTRA", medal: '🥉' },
+            { date: "29/11/25", cabor: "PENCAK SILAT", name: "HADI PURNOMO", category: "PUTRA", class: "1 PUTRA", medal: '🥉' },
+            { date: "29/11/25", cabor: "PENCAK SILAT", name: "AGUS HASANUDIN", category: "PUTRA", class: "J PUTRA", medal: '🥉' },
+            { date: "29/11/25", cabor: "PENCAK SILAT", name: "BOY VALENTINO", category: "PUTRA", class: "F PUTRA", medal: '🥉' },
+            { date: "29/11/25", cabor: "PENCAK SILAT", name: "ZAHRAH", category: "PUTRI", class: "A PUTRI", medal: '🥉' },
+            { date: "29/11/25", cabor: "PENCAK SILAT", name: "NOR SIPA", category: "PUTRI", class: "E PUTRI", medal: '🥉' },
         ];
 
 
@@ -390,9 +390,9 @@
             { rank: 0, city: "Kab. Tanah Laut", gold: 37, silver: 24, bronze: 17, total: 78, badge: '' },
             { rank: 0, city: "Kota Banjarmasin", gold: 23, silver: 22, bronze: 16, total: 61, badge: '' },
             { rank: 0, city: "Kota Banjarbaru", gold: 5, silver: 12, bronze: 16, total: 33, badge: '' },
+            { rank: 0, city: "Kab. Barito Kuala", gold: 3, silver: 6, bronze: 13, total: 22, badge: '' },
             { rank: 0, city: "Kab. Tabalong", gold: 4, silver: 4, bronze: 11, total: 19, badge: '' },
             { rank: 0, city: "Kab. Tanah Bumbu", gold: 4, silver: 5, bronze: 5, total: 14, badge: '' },
-            { rank: 0, city: "Kab. Barito Kuala", gold: 3, silver: 6, bronze: 13, total: 22, badge: '' },
             { rank: 0, city: "Kab. Hulu Sungai Utara", gold: 4, silver: 1, bronze: 5, total: 10, badge: '' },
             { rank: 0, city: "Kab. Banjar", gold: 2, silver: 3, bronze: 15, total: 20, badge: '' },
             { rank: 0, city: "Kab. Kotabaru", gold: 1, silver: 1, bronze: 6, total: 8, badge: '' },
@@ -401,11 +401,11 @@
             { rank: 0, city: "Kab. Hulu Sungai Selatan", gold: 0, silver: 2, bronze: 3, total: 5, badge: '' },
             
             // New Tapin Data
-            { rank: 0, city: "Kab. Tapin", gold: 10, silver: 9, bronze: 20, total: 39, badge: '' }, 
+            { rank: 0, city: "Kab. Tapin", gold: 10, silver: 9, bronze: 20, total: 39, badge: '' }, // UPDATED G, S, B, T: 10, 9, 20, 39
         ];
         
-        // Total medals calculation based on updated standingsData
-        const totalOverallMedals = standingsData.reduce((sum, item) => sum + item.total, 0);
+        // Total medals calculation based on updated standingsData 
+        const totalOverallMedals = standingsData.reduce((sum, item) => sum + item.total, 0); // 78+61+33+22+19+14+10+20+8+7+7+5 + 39 = 323
 
 
         const athleteData = newAthleteData;
@@ -537,6 +537,7 @@
                 document.querySelector('#klasemen .grid > div:nth-child(1) p:nth-child(2)').textContent = top2.city;
                 document.querySelector('#klasemen .grid > div:nth-child(1) p:nth-child(3)').textContent = top2.total;
             }
+            // Update the third card (Top 3 can change dynamically)
             if (top3) {
                 document.querySelector('#klasemen .grid > div:nth-child(3) p:nth-child(2)').textContent = top3.city;
                 document.querySelector('#klasemen .grid > div:nth-child(3) p:nth-child(3)').textContent = top3.total;
@@ -572,7 +573,7 @@
             });
         }
         
-        // Renders the summary of achievements per Cabor for Tapin
+        // Renders the summary of achievements per Cabor for Tapin - THIS FUNCTION SYNCS THE DATA
         function renderCaborAchievements() {
             const tbody = document.getElementById('cabor-achievements-body');
             tbody.innerHTML = ''; // Clear existing content
@@ -725,7 +726,6 @@
             renderStandings();
             renderAthleteAchievements();
             renderCaborAchievements();
-            renderSchedule();
             startCountdown();
             setupMobileMenu();
         };
