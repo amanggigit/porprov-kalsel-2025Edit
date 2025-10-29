@@ -39,7 +39,6 @@
     </style>
 </head>
 <body>
-
     <!-- Header / Navbar (Fixed at Top) -->
     <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-yellow-600/30 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,7 +84,8 @@
         <!-- Section 1: Hero & Countdown (Now showing LIVE status) -->
         <section id="beranda" class="text-center py-16 bg-slate-800 rounded-xl shadow-2xl mb-12 border-4 border-yellow-600/50">
             <p class="text-yellow-500 text-sm uppercase tracking-widest mb-2">Komite Olahraga Nasional Indonesia Kabupaten Tapin</p>
-            <h2 class="text-4xl md:text-6xl font-extrabold mb-8"> <!-- UPDATED SIZE -->
+            <!-- Teks diperkecil -->
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-8">
                 PEKAN OLAHRAGA PROVINSI <br>
                 <span class="gold-gradient">KALIMANTAN SELATAN 2025</span>
             </h2>
@@ -99,7 +99,7 @@
         <!-- Section 2: Key Statistics -->
         <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             <div class="p-6 rounded-xl countdown-tile text-center">
-                <p class="text-4xl font-bold text-yellow-500" id="stat-medali">323</p> <!-- UPDATED TOTAL -->
+                <p class="text-4xl font-bold text-yellow-500" id="stat-medali">0</p>
                 <p class="text-sm uppercase tracking-wide text-slate-400 mt-1">Total Medali</p>
             </div>
             <div class="p-6 rounded-xl countdown-tile text-center">
@@ -107,11 +107,11 @@
                 <p class="text-sm uppercase tracking-wide text-slate-400 mt-1">Total Atlet</p>
             </div>
             <div class="p-6 rounded-xl countdown-tile text-center">
-                <p class="text-4xl font-bold text-yellow-500" id="stat-venue">29</p>
+                <p class="text-4xl font-bold text-yellow-500" id="stat-venue">60</p> <!-- Diperbarui ke 60 Cabor/Venue -->
                 <p class="text-sm uppercase tracking-wide text-slate-400 mt-1">Venue Pertandingan</p>
             </div>
             <div class="p-6 rounded-xl countdown-tile text-center">
-                <p class="text-4xl font-bold text-yellow-500" id="stat-cabor">47</p>
+                <p class="text-4xl font-bold text-yellow-500" id="stat-cabor">60</p> <!-- Diperbarui ke 60 Cabor -->
                 <p class="text-sm uppercase tracking-wide text-slate-400 mt-1">Cabang Olahraga</p>
             </div>
         </section>
@@ -124,25 +124,25 @@
 
                 <!-- Top 3 Cards - Data will be updated by JS -->
                 <div class="grid grid-cols-3 gap-4 text-center">
-                    <!-- 2nd Place: Kota Banjarmasin -->
+                    <!-- 2nd Place -->
                     <div class="p-4 rounded-xl bg-slate-900 border-b-4 border-gray-400">
                         <span class="text-5xl mb-2 block">🥈</span>
-                        <p class="text-xl font-semibold text-gray-300">Kota Banjarmasin</p>
-                        <p class="text-3xl font-extrabold text-white mt-1">61</p>
+                        <p class="text-xl font-semibold text-gray-300">Memuat...</p>
+                        <p class="text-3xl font-extrabold text-white mt-1">0</p>
                         <p class="text-xs text-slate-400">Total Medali</p>
                     </div>
-                    <!-- 1st Place: Kab. Tanah Laut -->
+                    <!-- 1st Place -->
                     <div class="p-4 rounded-xl bg-slate-900 border-b-4 border-yellow-500 relative top-[-10px]">
                         <span class="text-6xl mb-2 block">🥇</span>
-                        <p class="text-xl font-semibold text-yellow-500">Kab. Tanah Laut</p>
-                        <p class="text-4xl font-extrabold text-white mt-1">78</p>
+                        <p class="text-xl font-semibold text-yellow-500">Memuat...</p>
+                        <p class="text-4xl font-extrabold text-white mt-1">0</p>
                         <p class="text-xs text-slate-400">Total Medali</p>
                     </div>
-                    <!-- 3rd Place: Kab. Banjarbaru (Dynamically updated by JS) -->
+                    <!-- 3rd Place -->
                     <div class="p-4 rounded-xl bg-slate-900 border-b-4 border-amber-800">
                         <span class="text-5xl mb-2 block">🥉</span>
-                        <p class="text-xl font-semibold text-amber-700">Kota Banjarbaru</p>
-                        <p class="text-3xl font-extrabold text-white mt-1">33</p>
+                        <p class="text-xl font-semibold text-amber-700">Memuat...</p>
+                        <p class="text-3xl font-extrabold text-white mt-1">0</p>
                         <p class="text-xs text-slate-400">Total Medali</p>
                     </div>
                 </div>
@@ -180,10 +180,10 @@
             </div>
         </section>
 
-        <!-- Prestasi Atlet Tapin -->
+        <!-- Prestasi Atlet Tapin (Updated Description) -->
         <section id="prestasi-atlet" class="bg-slate-800 p-6 rounded-xl shadow-2xl mb-12">
             <h3 class="text-3xl font-bold mb-6 border-b border-slate-700 pb-2">🏅 Prestasi Atlet Tapin</h3>
-            <p class="text-slate-400 mb-4">Daftar peraih medali dari kontingen Kab. Tapin (Total 39 Medali: 10 Emas, 9 Perak, 20 Perunggu).</p>
+            <p class="text-slate-400 mb-4" id="prestasi-atlet-desc">Daftar peraih medali dari kontingen Kab. Tapin (Total 39 Medali: 10 Emas, 9 Perak, 20 Perunggu).</p>
 
             <div class="table-responsive">
                 <table class="w-full text-left border-collapse">
@@ -204,7 +204,7 @@
             </div>
         </section>
         
-        <!-- Prestasi Cabor Tapin (UPDATED VIA JS) -->
+        <!-- Prestasi Cabor Tapin -->
         <section id="prestasi-cabor" class="bg-slate-800 p-6 rounded-xl shadow-2xl mb-12">
             <h3 class="text-3xl font-bold mb-6 border-b border-slate-700 pb-2">🎯 Prestasi Cabor Tapin</h3>
             <p class="text-slate-400 mb-4">Ringkasan perolehan medali Kab. Tapin per Cabang Olahraga.</p>
@@ -228,13 +228,14 @@
             </div>
         </section>
 
-        <!-- Section 5: Jadwal & Dokumentasi -->
+        <!-- Section 5: Jadwal & Dokumentasi (Jadwal Dipulihkan) -->
         <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             <!-- Jadwal Pertandingan -->
             <div id="jadwal" class="bg-slate-800 p-6 rounded-xl shadow-2xl">
                 <h3 class="text-3xl font-bold mb-6 border-b border-slate-700 pb-2">📅 Jadwal Pertandingan</h3>
                 <div class="space-y-4 max-h-[500px] overflow-y-auto pr-2" id="schedule-list">
                     <!-- Jadwal data akan diisi oleh JavaScript -->
+                    <p class="text-slate-400">Memuat jadwal...</p>
                 </div>
             </div>
 
@@ -302,7 +303,7 @@
                     <h4 class="text-lg font-semibold mb-4 text-white">Informasi Utama</h4>
                     <ul class="space-y-2 text-sm text-slate-400">
                         <li><span class="text-yellow-500">📅</span> 23 Oktober - 13 November 2025</li>
-                        <li><span class="text-yellow-500">🏟️</span> 29 Venue Pertandingan</li>
+                        <li><span class="text-yellow-500">🏟️</span> 60 Venue Pertandingan</li>
                         <li><span class="text-yellow-500">🏃‍♂️</span> 2,847 Total Atlet</li>
                     </ul>
                 </div>
@@ -336,9 +337,27 @@
     <script>
         // --- DATA MOCKUP ---
         
-        // Data Prestasi Atlet Tapin (10 Emas, 9 Perak, 20 Perunggu = 39 Total)
-        const newAthleteData = [
-            // Emas (10)
+        // Data Klasemen (Total 39 Medali Tapin: 10 Emas, 9 Perak, 20 Perunggu)
+        // Total 316 Medali
+        const standingsData = [
+            { rank: 0, city: "Kab. Tanah Laut", gold: 37, silver: 24, bronze: 17, total: 78, badge: '' },
+            { rank: 0, city: "Kota Banjarmasin", gold: 23, silver: 22, bronze: 16, total: 61, badge: '' },
+            { rank: 0, city: "Kab. Tapin", gold: 10, silver: 9, bronze: 20, total: 39, badge: '' }, // Updated Tapin data
+            { rank: 0, city: "Kota Banjarbaru", gold: 5, silver: 12, bronze: 16, total: 33, badge: '' },
+            { rank: 0, city: "Kab. Barito Kuala", gold: 3, silver: 6, bronze: 13, total: 22, badge: '' },
+            { rank: 0, city: "Kab. Banjar", gold: 2, silver: 3, bronze: 15, total: 20, badge: '' },
+            { rank: 0, city: "Kab. Tabalong", gold: 4, silver: 4, bronze: 11, total: 19, badge: '' },
+            { rank: 0, city: "Kab. Tanah Bumbu", gold: 4, silver: 5, bronze: 5, total: 14, badge: '' },
+            { rank: 0, city: "Kab. Hulu Sungai Utara", gold: 4, silver: 1, bronze: 5, total: 10, badge: '' },
+            { rank: 0, city: "Kab. Kotabaru", gold: 1, silver: 1, bronze: 6, total: 8, badge: '' },
+            { rank: 0, city: "Kab. Balangan", gold: 1, silver: 1, bronze: 5, total: 7, badge: '' },
+            { rank: 0, city: "Kab. Hulu Sungai Tengah", gold: 1, silver: 3, bronze: 3, total: 7, badge: '' },
+            { rank: 0, city: "Kab. Hulu Sungai Selatan", gold: 0, silver: 2, bronze: 3, total: 5, badge: '' },
+        ];
+        
+        // Detailed Prestasi Atlet Tapin (Total 39 Medali)
+        const athleteData = [
+            // Emas (10 entries)
             { date: "24/11/25", cabor: "LONCAT INDAH", name: "ZIYAD ABQORI RAJENDRA", category: "PRIA", class: "SINGKRON MENARA", medal: '🥇' },
             { date: "26/11/25", cabor: "GULAT", name: "ATHAYA FIKRI", category: "PUTRA", class: "GAYA BEBAS 70Kg", medal: '🥇' },
             { date: "28/11/25", cabor: "GULAT", name: "AHMAD FERDINAND", category: "PUTRA", class: "GAYA BEBAS 65 Kg", medal: '🥇' },
@@ -350,27 +369,27 @@
             { date: "29/11/25", cabor: "TINJU", name: "SILPA RAU RATU", category: "PUTRI", class: "57 Kg", medal: '🥇' },
             { date: "29/11/25", cabor: "TINJU", name: "TRIA AYU NIGNRUM", category: "PUTRI", class: "70 Kg", medal: '🥇' },
             
-            // Perak (9)
+            // Perak (9 entries)
             { date: "24/11/25", cabor: "LONCAT INDAH", name: "NAVARO ARVAN WIBOWO", category: "PRIA", class: "SINGKRON PAPAN", medal: '🥈' },
-            { date: "25/11/25", cabor: "PANJAT TEBING", name: "MASLIAINI, MAULIDYA KHAIRINA, RIZKINA HUSNUL MARWAH", category: "WANITA", class: "TIM SPEED KLASIK 12 M PI", medal: '🥈' },
-            { date: "25/11/25", cabor: "PANJAT TEBING", name: "MAULIDYA KHAIRINA, MASLIANA, MASLIANI", category: "WANITA", class: "TIM SPEED KLASIK 10 M PI", medal: '🥈' },
+            { date: "25/11/25", cabor: "PANJAT TEBING", name: "MASLIAINI, MAULIDYA KHAIRINA, RIZKINA HUSNUL MARWAH", category: "TIM WANITA", class: "TIM SPEED KLASIK 12 M PI", medal: '🥈' },
+            { date: "25/11/25", cabor: "PANJAT TEBING", name: "MAULIDYA KHAIRINA, MASLIANA, MASLIANI", category: "TIM WANITA", class: "TIM SPEED KLASIK 10 M PI", medal: '🥈' },
             { date: "27/11/25", cabor: "PANJAT TEBING", name: "AHMAD SYARWANI", category: "PUTRA", class: "SPEED WORLD RECORD", medal: '🥈' },
             { date: "28/11/25", cabor: "GULAT", name: "MUHAMMAD SYARIF", category: "PUTRA", class: "GAYA BEBAS 65 Kg", medal: '🥈' },
             { date: "29/11/25", cabor: "TINJU", name: "NABIL SAPUTRA", category: "PUTRA", class: "54 Kg", medal: '🥈' },
             { date: "29/11/25", cabor: "TINJU", name: "ALEXIS DE COSTA", category: "PUTRA", class: "60 Kg", medal: '🥈' },
             { date: "29/11/25", cabor: "PANAHAN", name: "NUR LAISYA MAYEDA", category: "PUTRI", class: "OLYMPIC ROUND COMPOUND", medal: '🥈' },
-            { date: "29/11/25", cabor: "DANCE SPORT", name: "MARISSA ADHANIS, AISHA MAYSUN AZKY", category: "PUTRI", class: "DUO HIP HOP FEMALE", medal: '🥈' },
-            
-            // Perunggu (20)
-            { date: "25/11/25", cabor: "PANJAT TEBING", name: "M. BADALI, BEN MARQUEZ, M NABIL FIRADAUSNI", category: "PRIA", class: "TIM SPEED KLASIK 10 M PA", medal: '🥉' },
+            { date: "29/11/25", cabor: "DANCE SPORT", name: "MARISSA ADHANIS & AISHA MAYSUN AZKY", category: "PUTRI", class: "DUO HIP HOP FEMALE", medal: '🥈' },
+
+            // Perunggu (20 entries)
+            { date: "25/11/25", cabor: "PANJAT TEBING", name: "M. BADALI, BEN MARQUEZ, M NABIL FIRADAUSNI", category: "TIM PRIA", class: "TIM SPEED KLASIK 10 M PA", medal: '🥉' },
             { date: "26/11/25", cabor: "GULAT", name: "MUHAMMAD MAULANA", category: "PUTRA", class: "GAYA BEBAS 57Kg", medal: '🥉' },
             { date: "26/11/25", cabor: "GULAT", name: "MUHAMMAD ISMAIL", category: "PUTRA", class: "GAYA BEBAS 60Kg", medal: '🥉' },
             { date: "26/11/25", cabor: "GULAT", name: "MUHAMMAD YAZID", category: "PUTRA", class: "GAYA BEBAS 63Kg", medal: '🥉' },
             { date: "27/11/25", cabor: "PANAHAN", name: "Dewi Agustin Delima", category: "PUTRI", class: "Recurve Putri", medal: '🥉' },
-            { date: "27/11/25", cabor: "GULAT", name: "Bintang assyufi", category: "PUTRA", class: "65 Kg", medal: '🥉' },
-            { date: "27/11/25", cabor: "GULAT", name: "Muhammad Jikriadi", category: "PUTRA", class: "74 Kg", medal: '🥉' },
-            { date: "28/11/25", cabor: "BOLA TANGAN", name: "TIM PUTRI (Beregu)", category: "PUTRI", class: "Beregu", medal: '🥉' },
-            { date: "28/11/25", cabor: "BOLA TANGAN", name: "TIM PUTRA (Beregu)", category: "PUTRA", class: "Beregu", medal: '🥉' },
+            { date: "27/11/25", cabor: "GULAT", name: "Bintang assyufi 65 kg", category: "PUTRA", class: "65 Kg", medal: '🥉' },
+            { date: "27/11/25", cabor: "GULAT", name: "Muhammad Jikriadi 74 kg", category: "PUTRA", class: "74 Kg", medal: '🥉' },
+            { date: "28/11/25", cabor: "BOLA TANGAN", name: "TIM", category: "PUTRI", class: "Beregu", medal: '🥉' },
+            { date: "28/11/25", cabor: "BOLA TANGAN", name: "TIM", category: "PUTRA", class: "Beregu", medal: '🥉' },
             { date: "28/11/25", cabor: "TAEKWONDO", name: "NAJMI TSAQIB", category: "PUTRI", class: "KYORUGI PUTRI UNDER 46Kg", medal: '🥉' },
             { date: "29/11/25", cabor: "TINJU", name: "FAUZAN RIFAZI", category: "PUTRA", class: "75 Kg", medal: '🥉' },
             { date: "29/11/25", cabor: "TAEKWONDO", name: "M. SADDAM AL FALAH", category: "PUTRA", class: "UNDER 74", medal: '🥉' },
@@ -380,355 +399,393 @@
             { date: "29/11/25", cabor: "PENCAK SILAT", name: "HADI PURNOMO", category: "PUTRA", class: "1 PUTRA", medal: '🥉' },
             { date: "29/11/25", cabor: "PENCAK SILAT", name: "AGUS HASANUDIN", category: "PUTRA", class: "J PUTRA", medal: '🥉' },
             { date: "29/11/25", cabor: "PENCAK SILAT", name: "BOY VALENTINO", category: "PUTRA", class: "F PUTRA", medal: '🥉' },
-            { date: "29/11/25", cabor: "PENCAK SILAT", name: "ZAHRAH", category: "PUTRI", class: "A PUTRI", medal: '🥉' },
-            { date: "29/11/25", cabor: "PENCAK SILAT", name: "NOR SIPA", category: "PUTRI", class: "E PUTRI", medal: '🥉' },
+            { date: "29/11/25", cabor: "PENCAK SILAT", name: "ZAHRAH", category: "PUTRI", class: "A PUTRI", medal: '🥉' }, // KOMA YANG HILANG SEBELUMNYA
+            { date: "29/11/25", cabor: "PENCAK SILAT", name: "NOR SIPA", category: "PUTRI", class: "E PUTRI", medal: '🥉' }
         ];
 
-
-        // Data Klasemen (Updated Kab. Tapin: G:10, S:9, B:20, T:39)
-        const standingsData = [
-            { rank: 0, city: "Kab. Tanah Laut", gold: 37, silver: 24, bronze: 17, total: 78, badge: '' },
-            { rank: 0, city: "Kota Banjarmasin", gold: 23, silver: 22, bronze: 16, total: 61, badge: '' },
-            { rank: 0, city: "Kota Banjarbaru", gold: 5, silver: 12, bronze: 16, total: 33, badge: '' },
-            { rank: 0, city: "Kab. Barito Kuala", gold: 3, silver: 6, bronze: 13, total: 22, badge: '' },
-            { rank: 0, city: "Kab. Tabalong", gold: 4, silver: 4, bronze: 11, total: 19, badge: '' },
-            { rank: 0, city: "Kab. Tanah Bumbu", gold: 4, silver: 5, bronze: 5, total: 14, badge: '' },
-            { rank: 0, city: "Kab. Hulu Sungai Utara", gold: 4, silver: 1, bronze: 5, total: 10, badge: '' },
-            { rank: 0, city: "Kab. Banjar", gold: 2, silver: 3, bronze: 15, total: 20, badge: '' },
-            { rank: 0, city: "Kab. Kotabaru", gold: 1, silver: 1, bronze: 6, total: 8, badge: '' },
-            { rank: 0, city: "Kab. Balangan", gold: 1, silver: 1, bronze: 5, total: 7, badge: '' },
-            { rank: 0, city: "Kab. Hulu Sungai Tengah", gold: 1, silver: 3, bronze: 3, total: 7, badge: '' },
-            { rank: 0, city: "Kab. Hulu Sungai Selatan", gold: 0, silver: 2, bronze: 3, total: 5, badge: '' },
-            
-            // New Tapin Data
-            { rank: 0, city: "Kab. Tapin", gold: 10, silver: 9, bronze: 20, total: 39, badge: '' }, // UPDATED G, S, B, T: 10, 9, 20, 39
-        ];
-        
-        // Total medals calculation based on updated standingsData 
-        const totalOverallMedals = standingsData.reduce((sum, item) => sum + item.total, 0); // 78+61+33+22+19+14+10+20+8+7+7+5 + 39 = 323
-
-
-        const athleteData = newAthleteData;
-
-
-        // Data Jadwal Pertandingan (47 Cabor) - Dates are corrected to use 2025
+        // Data Jadwal Pertandingan (60 Cabor) - DIPULIHKAN DAN DIPERBAIKI
         const scheduleData = [
-            { cabor: "Dayung", dates: "24 Oktober - 01 November 2025", venue: "Bendungan Damit", status: "Berlangsung" },
-            { cabor: "Renang Kolam & Renang Perairan Terbuka", dates: "24 Oktober - 31 Oktober 2025", venue: "Kolam Renang Tirta Kencana Pelaihari / Bendungan Gunung Makmur", status: "Berlangsung" },
-            { cabor: "Panjat Tebing", dates: "24 Oktober - 30 Oktober 2025", venue: "RTH Kijangmas Permai", status: "Berlangsung" },
-            { cabor: "Gulat", dates: "25 Oktober - 30 Oktober 2025", venue: "Gedung Serba Guna Kecamatan Jorong", status: "Berlangsung" },
-            { cabor: "Tinju", dates: "26 Oktober - 31 Oktober 2025", venue: "Gedung Serba Guna RTH Kijang Mas", status: "Berlangsung" },
-            { cabor: "Kick Boxing", dates: "26 Oktober - 31 Oktober 2025", venue: "Gedung Serba Guna Desa Panggung", status: "Berlangsung" },
-            { cabor: "Panahan", dates: "26 Oktober - 31 Oktober 2025", venue: "RTH Kijangmas Permai", status: "Berlangsung" },
-            { cabor: "Judo", dates: "26 Oktober - 01 November 2025", venue: "Gedung Serbaguna H. Iriansyah - Matah", status: "Berlangsung" },
-            { cabor: "Wushu", dates: "27 Oktober - 31 Oktober 2025", venue: "Gudang Logistik KPU Tanah Laut", status: "Berlangsung" },
-            { cabor: "Pencak Silat", dates: "27 Oktober - 30 Oktober 2025", venue: "Gedung Paraduta Kodim 1009 Pelaihari", status: "Berlangsung" },
-            { cabor: "Taekwondo", dates: "27 Oktober - 01 November 2025", venue: "Lapangan Tennis Indoor Pemuda", status: "Berlangsung" },
-            { cabor: "Tenis Lapangan", dates: "27 Oktober - 08 November 2025", venue: "Lapangan Tenis Matah / Lapangan Tenis Pemuda", status: "Berlangsung" },
-            { cabor: "Baseball dan Softball", dates: "27 Oktober - 05 November 2025", venue: "Lapangan Bola SMK PP Pelaihari", status: "Berlangsung" },
-            { cabor: "Bola Tangan", dates: "26 Oktober - 04 November 2025", venue: "Gedung Futsal Bati Bati / Pantai Takisung", status: "Berlangsung" },
-            { cabor: "Voli Pasir", dates: "28 Oktober - 03 November 2025", venue: "Pantai Batakan Baru", status: "Berlangsung" },
-            { cabor: "Bulu Tangkis", dates: "28 Oktober - 03 November 2025", venue: "GOR Tuntung Pandang / GOR Karya Pelita", status: "Berlangsung" },
-            { cabor: "Sepak Takraw", dates: "28 Oktober - 08 November 2025", venue: "Gedung Aufar Futsal Pelaihari", status: "Berlangsung" },
-            { cabor: "Balap Sepeda", dates: "28 Oktober - 03 November 2025", venue: "Jalan Kota Pelaihari (CERITATIUM) / Sirkuit Sepeda Gunung Kayangan", status: "Berlangsung" },
-            { cabor: "Sepak Bola Putra", dates: "28 Oktober - 13 November 2025", venue: "Stadion Pertasi Kencana / Lapangan Karang Taruna", status: "Berlangsung" },
-            { cabor: "Bola Basket", dates: "29 Oktober - 07 November 2025", venue: "Lapangan Basket RTH Kijangmas Permai", status: "Berlangsung" },
-            { cabor: "Dansa", dates: "29 Oktober - 31 Oktober 2025", venue: "Gedung Balairung Tuntung Pandang", status: "Berlangsung" },
-            { cabor: "Catur", dates: "29 Oktober - 04 November 2025", venue: "Aula Dinas PUPRP", status: "Berlangsung" },
-            // Cabor yang akan datang
-            { cabor: "Esport", dates: "30 Oktober - 05 November 2025", venue: "Aula Dinas Pendidikan Pelaihari", status: "Terjadwal" },
-            { cabor: "Aeromodelling", dates: "31 Oktober - 05 November 2025", venue: "Maluka Baulin", status: "Terjadwal" },
-            { cabor: "Binaraga", dates: "31 Oktober - 03 November 2025", venue: "Aula Hutan Jati/Kantor DisPora Pelaihari", status: "Terjadwal" },
-            { cabor: "Gateball", dates: "02 November - 04 November 2025", venue: "RTH Hasan Basri Pelaihari", status: "Terjadwal" },
-            { cabor: "Bridge", dates: "02 November - 09 November 2025", venue: "Gedung Balairung Tuntung Pandang", status: "Terjadwal" },
-            { cabor: "Biliar", dates: "02 November - 12 November 2025", venue: "Gedung Pusdiklat Bilyard Komplek CP", status: "Terjadwal" },
-            { cabor: "Loncat Indah", dates: "02 November - 09 November 2025", venue: "Kolam Renang SKB Banjarmasin", status: "Terjadwal" },
-            { cabor: "Anggar", dates: "02 November - 08 November 2025", venue: "Gedung Serantang Seruntung Pelaihari", status: "Terjadwal" },
-            { cabor: "Sambo", dates: "02 November - 05 November 2025", venue: "Gedung Serba Guna Kecamatan Jorong", status: "Terjadwal" },
-            { cabor: "MMA", dates: "02 November - 05 November 2025", venue: "Gedung Serba Guna Desa Bumi Jaya", status: "Terjadwal" },
-            { cabor: "Barongsai", dates: "03 November - 04 November 2025", venue: "Gudang Logistik KPU Tanah Laut", status: "Terjadwal" },
-            { cabor: "Petanque", dates: "03 November - 07 November 2025", venue: "Lapangan Petanque Pertasi Kencana", status: "Terjadwal" },
-            { cabor: "Drumband", dates: "03 November - 13 November 2025", venue: "Jalan 6 / 8 Kilo Kota Pelaihari / Stadion Pertasi Kencana", status: "Terjadwal" },
-            { cabor: "Golf", dates: "03 November - 07 November 2025", venue: "Lapangan Golf Swargaloka Banjarbaru", status: "Terjadwal" },
-            { cabor: "Atletik", dates: "03 November - 07 November 2025", venue: "Stadion Pertasi Kencana", status: "Terjadwal" },
-            { cabor: "Arung Jeram", dates: "03 November - 05 November 2025", venue: "Sungai Bakar & Ketapang - Bajuin", status: "Terjadwal" },
-            { cabor: "Kempo", dates: "03 November - 06 November 2025", venue: "Gedung Paraduta Kodim 1009 Pelaihari", status: "Terjadwal" },
-            { cabor: "Kurash", dates: "03 November - 07 November 2025", venue: "Aula SMK PP Pelaihari", status: "Terjadwal" },
-            { cabor: "Futsal", dates: "03 November - 11 November 2025", venue: "Gedung Futsal Bati Bati", status: "Terjadwal" },
-            { cabor: "Tenis Meja", dates: "04 November - 10 November 2025", venue: "Lapangan Tennis Indoor Pemuda", status: "Terjadwal" },
-            { cabor: "Menembak", dates: "05 November - 12 November 2025", venue: "Gudang Logistik KPU Tanah Laut / Lapangan Pertasi Kencana Outdoor", status: "Terjadwal" },
-            { cabor: "Sepatu Roda & Skateboard", dates: "05 November - 11 November 2025", venue: "RTH Hasan Basri Pelaihari / Jalan Raya H. Boejasin", status: "Terjadwal" },
-            { cabor: "Voli Indoor", dates: "06 November - 13 November 2025", venue: "GOR Tuntung Pandang", status: "Terjadwal" },
-            { cabor: "Pickleball", dates: "06 November - 08 November 2025", venue: "Sport Center Perdana", status: "Terjadwal" },
-            { cabor: "Angkat Berat", dates: "06 November - 08 November 2025", venue: "Aula Hutan Jati/Kantor DisPora Pelaihari", status: "Terjadwal" },
-            { cabor: "Sepak Bola Putri", dates: "07 November - 13 November 2025", venue: "Lapangan Pinang Berbaris", status: "Terjadwal" },
-            { cabor: "Balap Motor", dates: "08 November - 09 November 2025", venue: "Sirkuit Matah", status: "Terjadwal" },
-            { cabor: "Muaythai", dates: "08 November - 13 November 2025", venue: "Gedung Serba Guna RTH Kijang Mas", status: "Terjadwal" },
-            { cabor: "Karate", dates: "09 November - 13 November 2025", venue: "Gedung Paraduta Kodim 1009 Pelaihari", status: "Terjadwal" },
-            { cabor: "Teqball", dates: "09 November - 13 November 2025", venue: "Gedung Serba Guna Desa Panggung", status: "Terjadwal" },
-            { cabor: "Paralayang", dates: "09 November - 13 November 2025", venue: "Gunung Katunun Pelaihari", status: "Terjadwal" },
-            { cabor: "Senam", dates: "09 November - 13 November 2025", venue: "Lapangan Basket RTH Kijangmas Permai", status: "Terjadwal" },
-            { cabor: "Ski Air", dates: "09 November - 13 November 2025", venue: "Pantai Batakan Baru", status: "Terjadwal" },
-            { cabor: "Triathlon", dates: "09 November - 13 November 2025", venue: "Takisung", status: "Terjadwal" },
-            { cabor: "Berkuda Memanah", dates: "09 November - 13 November 2025", venue: "Pantai Batakan Baru", status: "Terjadwal" },
-            { cabor: "Hapkido", dates: "09 November - 13 November 2025", venue: "Lapangan Tenis Matah", status: "Terjadwal" },
-            { cabor: "Ju-jitsu", dates: "11 November - 13 November 2025", venue: "Gedung Serbaguna H. Iriansyah - Matah", status: "Terjadwal" },
-            { cabor: "Angkat Besi", dates: "12 November - 13 November 2025", venue: "Aula Hutan Jati/Kantor DisPora Pelaihari", status: "Terjadwal" },
+            { cabor: "Dayung", dates: "24 Okt - 01 Nov 2025", venue: "Bendungan Damit", status: "Berlangsung" },
+            { cabor: "Renang Kolam & Perairan Terbuka", dates: "24 Okt - 31 Okt 2025", venue: "Kolam Renang Tirta Kencana / Bendungan G. Makmur", status: "Berlangsung" },
+            { cabor: "Panjat Tebing", dates: "24 Okt - 30 Okt 2025", venue: "RTH Kijangmas Permai", status: "Berlangsung" },
+            { cabor: "Baseball dan Softball", dates: "27 Okt - 05 Nov 2025", venue: "Lapangan Bola SMK PP Pelaihari", status: "Berlangsung" },
+            { cabor: "Bola Tangan", dates: "26 Okt - 04 Nov 2025", venue: "Gedung Futsal Bati Bati / Pantai Takisung", status: "Berlangsung" },
+            { cabor: "Panahan", dates: "26 Okt - 31 Okt 2025", venue: "RTH Kijangmas Permai", status: "Berlangsung" },
+            { cabor: "Tinju", dates: "26 Okt - 31 Okt 2025", venue: "Gedung Serba Guna RTH Kijang Mas", status: "Berlangsung" },
+            { cabor: "Gulat", dates: "25 Okt - 30 Okt 2025", venue: "Gedung Serba Guna Kecamatan Jorong", status: "Berlangsung" },
+            { cabor: "Kick Boxing", dates: "26 Okt - 31 Okt 2025", venue: "Gedung Serba Guna Desa Panggung", status: "Berlangsung" },
+            { cabor: "Judo", dates: "26 Okt - 01 Nov 2025", venue: "Gedung Serbaguna H. Iriansyah - Matah", status: "Berlangsung" },
+            { cabor: "Voli Pasir", dates: "28 Okt - 03 Nov 2025", venue: "Pantai Batakan Baru", status: "Berlangsung" },
+            { cabor: "Tenis Lapangan", dates: "27 Okt - 08 Nov 2025", venue: "Lapangan Tenis Matah / Lapangan Tenis Pemuda", status: "Berlangsung" },
+            { cabor: "Pencak Silat", dates: "27 Okt - 30 Okt 2025", venue: "Gedung Paraduta Kodim 1009 Pelaihari", status: "Berlangsung" },
+            { cabor: "Taekwondo", dates: "27 Okt - 01 Nov 2025", venue: "Lapangan Tennis Indoor Pemuda", status: "Berlangsung" },
+            { cabor: "Wushu", dates: "27 Okt - 31 Okt 2025", venue: "Gudang Logistik KPU Tanah Laut", status: "Berlangsung" },
+            { cabor: "Bulu Tangkis", dates: "28 Okt - 03 Nov 2025", venue: "GOR Tuntung Pandang / GOR Karya Pelita", status: "Berlangsung" },
+            { cabor: "Sepak Bola Putra", dates: "28 Okt - 13 Nov 2025", venue: "Stadion Pertasi Kencana / Lap. Karang Taruna / Stadion Datu Timang", status: "Berlangsung" },
+            { cabor: "Sepak Takraw", dates: "28 Okt - 08 Nov 2025", venue: "Gedung Aufar Futsal Pelaihari", status: "Berlangsung" },
+            { cabor: "Balap Sepeda", dates: "28 Okt - 03 Nov 2025", venue: "Venue Balap Sepeda (Beberapa Lokasi)", status: "Berlangsung" },
+            { cabor: "Sepak Bola Putri", dates: "07 Nov - 13 Nov 2025", venue: "Lapangan Pinang Berbaris", status: "Terjadwal" },
+            { cabor: "Catur", dates: "29 Okt - 04 Nov 2025", venue: "Aula Dinas PUPRP", status: "Berlangsung" },
+            { cabor: "Bola Basket", dates: "29 Okt - 07 Nov 2025", venue: "Lapangan Basket RTH Kijangmas Permai", status: "Berlangsung" },
+            { cabor: "Dansa", dates: "29 Okt - 31 Okt 2025", venue: "Gedung Balairung Tuntung Pandang", status: "Berlangsung" },
+            { cabor: "Esport", dates: "30 Okt - 05 Nov 2025", venue: "Aula Dinas Pendidikan Pelaihari", status: "Berlangsung" }, // Status diperbarui ke Berlangsung (30 Okt)
+            { cabor: "Aeromodelling", dates: "31 Okt - 05 Nov 2025", venue: "Maluka Baulin", status: "Terjadwal" },
+            { cabor: "Binaraga", dates: "31 Okt - 03 Nov 2025", venue: "Aula Hutan Jati/Kantor DisPora Pelaihari", status: "Terjadwal" },
+            { cabor: "Futsal", dates: "03 Nov - 11 Nov 2025", venue: "Gedung Futsal Bati Bati", status: "Terjadwal" },
+            { cabor: "Gateball", dates: "02 Nov - 04 Nov 2025", venue: "RTH Hasan Basri Pelaihari", status: "Terjadwal" },
+            { cabor: "Bridge", dates: "02 Nov - 09 Nov 2025", venue: "Gedung Balairung Tuntung Pandang", status: "Terjadwal" },
+            { cabor: "Biliar", dates: "02 Nov - 12 Nov 2025", venue: "Gedung Pusdiklat Bilyard Komplek CP", status: "Terjadwal" },
+            { cabor: "Loncat Indah", dates: "02 Nov - 09 Nov 2025", venue: "Kolam Renang SKB Banjarmasin", status: "Terjadwal" },
+            { cabor: "Anggar", dates: "02 Nov - 08 Nov 2025", venue: "Gedung Serantang Seruntung Pelaihari", status: "Terjadwal" },
+            { cabor: "Sambo", dates: "02 Nov - 05 Nov 2025", venue: "Gedung Serba Guna Kecamatan Jorong", status: "Terjadwal" },
+            { cabor: "MMA", dates: "02 Nov - 05 Nov 2025", venue: "Gedung Serba Guna Desa Bumi Jaya", status: "Terjadwal" },
+            { cabor: "Barongsai", dates: "03 Nov - 04 Nov 2025", venue: "Gudang Logistik KPU Tanah Laut", status: "Terjadwal" },
+            { cabor: "Petanque", dates: "03 Nov - 07 Nov 2025", venue: "Lapangan Petanque Pertasi Kencana", status: "Terjadwal" },
+            { cabor: "Drumband", dates: "03 Nov - 13 Nov 2025", venue: "Venue Drumband (Beberapa Lokasi)", status: "Terjadwal" },
+            { cabor: "Golf", dates: "03 Nov - 07 Nov 2025", venue: "Lapangan Golf Swargaloka Banjarbaru", status: "Terjadwal" },
+            { cabor: "Atletik", dates: "03 Nov - 07 Nov 2025", venue: "Stadion Pertasi Kencana", status: "Terjadwal" },
+            { cabor: "Arung Jeram", dates: "03 Nov - 05 Nov 2025", venue: "Sungai Bakar & Ketapang - Bajuin", status: "Terjadwal" },
+            { cabor: "Kempo", dates: "03 Nov - 06 Nov 2025", venue: "Gedung Paraduta Kodim 1009 Pelaihari", status: "Terjadwal" },
+            { cabor: "Kurash", dates: "03 Nov - 07 Nov 2025", venue: "Aula SMK PP Pelaihari", status: "Terjadwal" },
+            { cabor: "Tenis Meja", dates: "04 Nov - 10 Nov 2025", venue: "Lapangan Tennis Indoor Pemuda", status: "Terjadwal" },
+            { cabor: "Menembak", dates: "05 Nov - 12 Nov 2025", venue: "Gudang Logistik KPU / Lapangan Pertasi Kencana", status: "Terjadwal" },
+            { cabor: "Sepatu Roda & Skateboard", dates: "05 Nov - 11 Nov 2025", venue: "RTH Hasan Basri Pelaihari / Jalan Raya H. Boejasin", status: "Terjadwal" },
+            { cabor: "Voli Indoor", dates: "06 Nov - 13 Nov 2025", venue: "GOR Tuntung Pandang", status: "Terjadwal" },
+            { cabor: "Pickleball", dates: "06 Nov - 08 Nov 2025", venue: "Sport Center Perdana", status: "Terjadwal" },
+            { cabor: "Angkat Berat", dates: "06 Nov - 08 Nov 2025", venue: "Aula Hutan Jati/Kantor DisPora Pelaihari", status: "Terjadwal" },
+            { cabor: "Balap Motor", dates: "08 Nov - 09 Nov 2025", venue: "Sirkuit Matah", status: "Terjadwal" },
+            { cabor: "Muaythai", dates: "08 Nov - 13 Nov 2025", venue: "Gedung Serba Guna RTH Kijang Mas", status: "Terjadwal" },
+            { cabor: "Karate", dates: "09 Nov - 13 Nov 2025", venue: "Gedung Paraduta Kodim 1009 Pelaihari", status: "Terjadwal" },
+            { cabor: "Teqball", dates: "09 Nov - 13 Nov 2025", venue: "Gedung Serba Guna Desa Panggung", status: "Terjadwal" },
+            { cabor: "Paralayang", dates: "09 Nov - 13 Nov 2025", venue: "Gunung Katunun Pelaihari", status: "Terjadwal" },
+            { cabor: "Senam", dates: "09 Nov - 13 Nov 2025", venue: "Lapangan Basket RTH Kijangmas Permai", status: "Terjadwal" },
+            { cabor: "Ski Air", dates: "09 Nov - 13 Nov 2025", venue: "Pantai Batakan Baru", status: "Terjadwal" },
+            { cabor: "Triathlon", dates: "09 Nov - 13 Nov 2025", venue: "Takisung", status: "Terjadwal" },
+            { cabor: "Berkuda Memanah", dates: "09 Nov - 13 Nov 2025", venue: "Pantai Batakan Baru", status: "Terjadwal" },
+            { cabor: "Hapkido", dates: "09 Nov - 13 Nov 2025", venue: "Lapangan Tenis Matah", status: "Terjadwal" },
+            { cabor: "Ju-jitsu", dates: "11 Nov - 13 Nov 2025", venue: "Gedung Serbaguna H. Iriansyah - Matah", status: "Terjadwal" },
+            { cabor: "Angkat Besi", dates: "12 Nov - 13 Nov 2025", venue: "Aula Hutan Jati/Kantor DisPora Pelaihari", status: "Terjadwal" },
         ];
 
 
         // --- JAVASCRIPT FUNCTIONS ---
 
+        // Fungsi untuk menghitung total medali dan memperbarui stat
+        function calculateTotalMedals(standings) {
+            return standings.reduce((sum, item) => sum + item.total, 0);
+        }
+
         // Function to render the medal standings table
         function renderStandings() {
-            const tbody = document.getElementById('medal-standings');
-            tbody.innerHTML = ''; // Clear existing content
+            try {
+                const tbody = document.getElementById('medal-standings');
+                tbody.innerHTML = ''; // Clear existing content
 
-            // Sort standings data by Gold, then Silver, then Bronze (manual sort as rank order has changed)
-            const sortedStandings = [...standingsData].sort((a, b) => {
-                if (a.gold !== b.gold) return b.gold - a.gold;
-                if (a.silver !== b.silver) return b.silver - a.silver;
-                return b.bronze - a.bronze;
-            }).map((data, index) => ({...data, rank: index + 1, badge: (index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '')}));
+                // Sort standings data by Gold, then Silver, then Bronze
+                const sortedStandings = [...standingsData].sort((a, b) => {
+                    if (a.gold !== b.gold) return b.gold - a.gold;
+                    if (a.silver !== b.silver) return b.silver - a.silver;
+                    return b.bronze - a.bronze;
+                }).map((data, index) => ({ ...data, rank: index + 1, badge: (index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '') }));
 
+                sortedStandings.forEach((data) => {
+                    const isTop3 = data.rank <= 3;
+                    const isTapin = data.city === 'Kab. Tapin'; // Check for Tapin
+                    
+                    let rowClass;
+                    let rankClass;
 
-            sortedStandings.forEach((data) => {
-                const isTop3 = data.rank <= 3;
-                const isTapin = data.city === 'Kab. Tapin'; // Check for Tapin
+                    if (isTapin) {
+                        // Unique highlight for Tapin
+                        rowClass = 'bg-red-900/40 hover:bg-red-900/60 border-l-4 border-red-500 text-red-100 font-extrabold shadow-lg';
+                        rankClass = 'text-red-400';
+                    } else {
+                        rowClass = isTop3 ? 'bg-slate-700/70 hover:bg-slate-600 border-l-4 border-yellow-500' : 'bg-slate-800/70 hover:bg-slate-700';
+                        rankClass = isTop3 ? 'text-yellow-500' : 'text-white';
+                    }
 
-                // Highlight row for Top 3 (Yellow border) or Tapin (Red border)
-                let rowClass;
-                let rankClass;
+                    const row = `
+                        <tr class="${rowClass} border-b border-slate-700 transition duration-150">
+                            <td class="p-3 font-bold ${rankClass}">
+                                ${data.badge} ${data.rank}
+                            </td>
+                            <td class="p-3 font-semibold">${data.city}</td>
+                            <td class="p-3 text-center text-yellow-500 font-bold">${data.gold}</td>
+                            <td class="p-3 text-center text-gray-400 font-bold">${data.silver}</td>
+                            <td class="p-3 text-center text-amber-700 font-bold">${data.bronze}</td>
+                            <td class="p-3 text-center text-red-500 font-extrabold">${data.total}</td>
+                        </tr>
+                    `;
+                    tbody.innerHTML += row;
+                });
 
-                if (isTapin) {
-                    // Unique highlight for Tapin
-                    rowClass = 'bg-red-900/40 hover:bg-red-900/60 border-l-4 border-red-500 text-red-100 font-extrabold shadow-lg';
-                    rankClass = 'text-red-400';
-                } else {
-                    rowClass = isTop3 ? 'bg-slate-700/70 hover:bg-slate-600 border-l-4 border-yellow-500' : 'bg-slate-800/70 hover:bg-slate-700';
-                    rankClass = isTop3 ? 'text-yellow-500' : 'text-white';
+                // Update Top 3 Cards
+                const top1 = sortedStandings.find(s => s.rank === 1);
+                const top2 = sortedStandings.find(s => s.rank === 2);
+                const top3 = sortedStandings.find(s => s.rank === 3);
+
+                if (top1) {
+                    document.querySelector('#klasemen .grid > div:nth-child(2) p:nth-child(2)').textContent = top1.city;
+                    document.querySelector('#klasemen .grid > div:nth-child(2) p:nth-child(3)').textContent = top1.total;
+                }
+                if (top2) {
+                    document.querySelector('#klasemen .grid > div:nth-child(1) p:nth-child(2)').textContent = top2.city;
+                    document.querySelector('#klasemen .grid > div:nth-child(1) p:nth-child(3)').textContent = top2.total;
+                }
+                if (top3) {
+                    document.querySelector('#klasemen .grid > div:nth-child(3) p:nth-child(2)').textContent = top3.city;
+                    document.querySelector('#klasemen .grid > div:nth-child(3) p:nth-child(3)').textContent = top3.total;
                 }
 
-                const row = `
-                    <tr class="${rowClass} border-b border-slate-700 transition duration-150">
-                        <td class="p-3 font-bold ${rankClass}">
-                            ${data.badge} ${data.rank}
-                        </td>
-                        <td class="p-3 font-semibold">${data.city}</td>
-                        <td class="p-3 text-center text-yellow-500 font-bold">${data.gold}</td>
-                        <td class="p-3 text-center text-gray-400 font-bold">${data.silver}</td>
-                        <td class="p-3 text-center text-amber-700 font-bold">${data.bronze}</td>
-                        <td class="p-3 text-center text-red-500 font-extrabold">${data.total}</td>
-                    </tr>
-                `;
-                tbody.innerHTML += row;
-            });
-            
-            // Update Top 3 Cards
-            const top1 = sortedStandings.find(s => s.rank === 1);
-            const top2 = sortedStandings.find(s => s.rank === 2);
-            const top3 = sortedStandings.find(s => s.rank === 3);
+                // Update total overall medals stat
+                const totalOverallMedals = calculateTotalMedals(standingsData);
+                document.getElementById('stat-medali').textContent = totalOverallMedals;
 
-            if (top1) {
-                document.querySelector('#klasemen .grid > div:nth-child(2) p:nth-child(2)').textContent = top1.city;
-                document.querySelector('#klasemen .grid > div:nth-child(2) p:nth-child(3)').textContent = top1.total;
+            } catch (e) {
+                console.error("Error rendering standings:", e);
+                document.getElementById('medal-standings').innerHTML = '<tr><td colspan="6" class="p-4 text-center text-red-500">Gagal memuat klasemen.</td></tr>';
             }
-            if (top2) {
-                document.querySelector('#klasemen .grid > div:nth-child(1) p:nth-child(2)').textContent = top2.city;
-                document.querySelector('#klasemen .grid > div:nth-child(1) p:nth-child(3)').textContent = top2.total;
-            }
-            // Update the third card (Top 3 can change dynamically)
-            if (top3) {
-                document.querySelector('#klasemen .grid > div:nth-child(3) p:nth-child(2)').textContent = top3.city;
-                document.querySelector('#klasemen .grid > div:nth-child(3) p:nth-child(3)').textContent = top3.total;
-            }
-            
-            // Update total overall medals stat
-            document.getElementById('stat-medali').textContent = totalOverallMedals;
         }
 
         // Renders the detailed list of athlete achievements for Tapin
         function renderAthleteAchievements() {
-            const tbody = document.getElementById('athlete-achievements-body');
-            tbody.innerHTML = ''; // Clear existing content
+            try {
+                const tbody = document.getElementById('athlete-achievements-body');
+                tbody.innerHTML = ''; // Clear existing content
 
-            athleteData.forEach((atlet, index) => {
-                const medalClass = atlet.medal === '🥇' ? 'text-yellow-500 font-extrabold' : 
-                                     atlet.medal === '🥈' ? 'text-gray-400 font-extrabold' : 'text-amber-700 font-extrabold';
-                
-                // Set default for class if not provided in data
-                const athleteClass = atlet.class && atlet.class !== 'TBD' ? atlet.class : '';
+                // Hitung total dari data atlet
+                let gold = 0, silver = 0, bronze = 0;
+                athleteData.forEach((atlet, index) => {
+                    let medalClass;
+                    if (atlet.medal === '🥇') {
+                        gold++;
+                        medalClass = 'text-yellow-500 font-extrabold';
+                    } else if (atlet.medal === '🥈') {
+                        silver++;
+                        medalClass = 'text-gray-400 font-extrabold';
+                    } else {
+                        bronze++;
+                        medalClass = 'text-amber-700 font-extrabold';
+                    }
 
-                const row = `
-                    <tr class="bg-slate-800/70 hover:bg-slate-700 border-b border-slate-700 transition duration-150">
-                        <td class="p-3 font-semibold">${index + 1}.</td>
-                        <td class="p-3 text-sm text-yellow-500">${atlet.date || 'TBA'}</td>
-                        <td class="p-3 uppercase text-sm">${atlet.cabor}</td>
-                        <td class="p-3 font-bold text-white">${atlet.name}</td>
-                        <td class="p-3 text-sm">${athleteClass} (${atlet.category})</td>
-                        <td class="p-3 text-center text-xl ${medalClass}">${atlet.medal}</td>
-                    </tr>
-                `;
-                tbody.innerHTML += row;
-            });
+                    const athleteClass = atlet.class && atlet.class !== 'TBD' ? atlet.class : '';
+
+                    const row = `
+                        <tr class="bg-slate-800/70 hover:bg-slate-700 border-b border-slate-700 transition duration-150">
+                            <td class="p-3 font-semibold">${index + 1}.</td>
+                            <td class="p-3 text-sm text-yellow-500">${atlet.date || 'TBA'}</td>
+                            <td class="p-3 uppercase text-sm">${atlet.cabor}</td>
+                            <td class="p-3 font-bold text-white">${atlet.name}</td>
+                            <td class="p-3 text-sm">${athleteClass} (${atlet.category})</td>
+                            <td class="p-3 text-center text-xl ${medalClass}">${atlet.medal}</td>
+                        </tr>
+                    `;
+                    tbody.innerHTML += row;
+                });
+
+                // Update deskripsi
+                document.getElementById('prestasi-atlet-desc').textContent = `Daftar peraih medali dari kontingen Kab. Tapin (Total ${athleteData.length} Medali: ${gold} Emas, ${silver} Perak, ${bronze} Perunggu).`;
+
+            } catch (e) {
+                console.error("Error rendering athlete achievements:", e);
+                document.getElementById('athlete-achievements-body').innerHTML = '<tr><td colspan="6" class="p-4 text-center text-red-500">Gagal memuat prestasi atlet.</td></tr>';
+            }
         }
         
-        // Renders the summary of achievements per Cabor for Tapin - THIS FUNCTION SYNCS THE DATA
+        // Renders the summary of achievements per Cabor for Tapin
         function renderCaborAchievements() {
-            const tbody = document.getElementById('cabor-achievements-body');
-            tbody.innerHTML = ''; // Clear existing content
-            
-            // 1. Aggregate data by Cabor
-            const caborSummary = athleteData.reduce((acc, current) => {
-                const caborName = current.cabor;
-                if (!acc[caborName]) {
-                    acc[caborName] = { gold: 0, silver: 0, bronze: 0, total: 0 };
-                }
+            try {
+                const tbody = document.getElementById('cabor-achievements-body');
+                tbody.innerHTML = ''; // Clear existing content
                 
-                if (current.medal === '🥇') acc[caborName].gold++;
-                else if (current.medal === '🥈') acc[caborName].silver++;
-                else if (current.medal === '🥉') acc[caborName].bronze++;
-                
-                acc[caborName].total++;
-                return acc;
-            }, {});
+                // 1. Aggregate data by Cabor
+                const caborSummary = athleteData.reduce((acc, current) => {
+                    const caborName = current.cabor;
+                    if (!acc[caborName]) {
+                        acc[caborName] = { gold: 0, silver: 0, bronze: 0, total: 0 };
+                    }
+                    
+                    if (current.medal === '🥇') acc[caborName].gold++;
+                    else if (current.medal === '🥈') acc[caborName].silver++;
+                    else if (current.medal === '🥉') acc[caborName].bronze++;
+                    
+                    acc[caborName].total++;
+                    return acc;
+                }, {});
 
-            // 2. Convert to array and sort (by Gold, then Silver, then Bronze)
-            const sortedCaborList = Object.keys(caborSummary).map(cabor => ({
-                cabor: cabor,
-                ...caborSummary[cabor]
-            })).sort((a, b) => {
-                if (a.gold !== b.gold) return b.gold - a.gold;
-                if (a.silver !== b.silver) return b.silver - a.silver;
-                return b.bronze - a.bronze;
-            });
+                // 2. Convert to array and sort (by Gold, then Silver, then Bronze)
+                const sortedCaborList = Object.keys(caborSummary).map(cabor => ({
+                    cabor: cabor,
+                    ...caborSummary[cabor]
+                })).sort((a, b) => {
+                    if (a.gold !== b.gold) return b.gold - a.gold;
+                    if (a.silver !== b.silver) return b.silver - a.silver;
+                    return b.bronze - a.bronze;
+                });
 
-            // 3. Render the table rows
-            sortedCaborList.forEach((data, index) => {
-                const row = `
-                    <tr class="bg-slate-800/70 hover:bg-slate-700 border-b border-slate-700 transition duration-150">
-                        <td class="p-3 font-semibold">${index + 1}.</td>
-                        <td class="p-3 font-bold text-yellow-500">${data.cabor}</td>
-                        <td class="p-3 text-center text-yellow-500 font-bold">${data.gold}</td>
-                        <td class="p-3 text-center text-gray-400 font-bold">${data.silver}</td>
-                        <td class="p-3 text-center text-amber-700 font-bold">${data.bronze}</td>
-                        <td class="p-3 text-center text-red-500 font-extrabold">${data.total}</td>
-                    </tr>
-                `;
-                tbody.innerHTML += row;
-            });
+                // 3. Render the table rows
+                sortedCaborList.forEach((data, index) => {
+                    const row = `
+                        <tr class="bg-slate-800/70 hover:bg-slate-700 border-b border-slate-700 transition duration-150">
+                            <td class="p-3 font-semibold">${index + 1}.</td>
+                            <td class="p-3 font-bold text-yellow-500">${data.cabor}</td>
+                            <td class="p-3 text-center text-yellow-500 font-bold">${data.gold}</td>
+                            <td class="p-3 text-center text-gray-400 font-bold">${data.silver}</td>
+                            <td class="p-3 text-center text-amber-700 font-bold">${data.bronze}</td>
+                            <td class="p-3 text-center text-red-500 font-extrabold">${data.total}</td>
+                        </tr>
+                    `;
+                    tbody.innerHTML += row;
+                });
+            } catch (e) {
+                console.error("Error rendering cabor achievements:", e);
+                document.getElementById('cabor-achievements-body').innerHTML = '<tr><td colspan="6" class="p-4 text-center text-red-500">Gagal memuat prestasi cabor.</td></tr>';
+            }
         }
 
         // Function to render the schedule list
         function renderSchedule() {
-            const scheduleList = document.getElementById('schedule-list');
-            scheduleList.innerHTML = ''; // Clear existing content
+            try {
+                const scheduleList = document.getElementById('schedule-list');
+                scheduleList.innerHTML = ''; // Clear existing content
 
-            scheduleData.forEach((item, index) => {
-                // Determine border color based on status
-                const borderColor = item.status === 'Berlangsung' ? 'border-red-600' : 'border-yellow-500';
-                const statusColor = item.status === 'Berlangsung' ? 'text-red-400' : 'text-yellow-400';
+                const today = new Date("2025-10-30T06:42:00"); // Waktu saat ini: 30 Oktober 2025
 
-                const html = `
-                    <div class="p-4 bg-slate-900 rounded-lg border-l-4 ${borderColor} hover:bg-slate-700 transition duration-200">
-                        <p class="text-base font-bold text-white">${item.cabor}</p>
-                        <p class="text-sm text-yellow-400 mt-1">${item.dates}</p>
-                        <p class="text-xs text-slate-400">Venue: ${item.venue}</p>
-                        <p class="text-xs ${statusColor} font-semibold mt-1">Status: ${item.status}</p>
-                    </div>
-                `;
-                scheduleList.innerHTML += html;
-            });
+                scheduleData.forEach((item, index) => {
+                    // Logika status berdasarkan tanggal hari ini (30 Okt)
+                    // Asumsi format 'DD Nov YYYY'
+                    const dateParts = item.dates.split(' - ')[0].split(' '); // e.g., "24 Okt"
+                    const startDate = new Date(`${dateParts[1]} ${dateParts[0]}, 2025`);
+                    
+                    let currentStatus = item.status; // Default
+                    // Jika tanggal mulai sebelum atau sama dengan hari ini, statusnya "Berlangsung"
+                    if (startDate <= today) {
+                         currentStatus = "Berlangsung";
+                    } else {
+                         currentStatus = "Terjadwal";
+                    }
+
+                    // Tentukan warna berdasarkan status yang baru dihitung
+                    const borderColor = currentStatus === 'Berlangsung' ? 'border-red-600' : 'border-yellow-500';
+                    const statusColor = currentStatus === 'Berlangsung' ? 'text-red-400' : 'text-yellow-400';
+
+                    const html = `
+                        <div class="p-4 bg-slate-900 rounded-lg border-l-4 ${borderColor} hover:bg-slate-700 transition duration-200">
+                            <p class="text-base font-bold text-white">${item.cabor}</p>
+                            <p class="text-sm text-yellow-400 mt-1">${item.dates}</p>
+                            <p class="text-xs text-slate-400">Venue: ${item.venue}</p>
+                            <p class="text-xs ${statusColor} font-semibold mt-1">Status: ${currentStatus}</p>
+                        </div>
+                    `;
+                    scheduleList.innerHTML += html;
+                });
+            } catch (e) {
+                console.error("Error rendering schedule:", e);
+                 document.getElementById('schedule-list').innerHTML = '<p class="p-4 text-center text-red-500">Gagal memuat jadwal.</p>';
+            }
         }
 
 
         // Function to handle the Countdown Timer and Status
         function startCountdown() {
-            // Set the target date range for the event (Oct 23 - Nov 13, 2025)
-            const eventStartDate = new Date("October 23, 2025 00:00:00").getTime();
-            const eventEndDate = new Date("November 13, 2025 23:59:59").getTime();
-            const countdownEl = document.getElementById('countdown');
-            const statusEl = document.getElementById('countdown-status');
+            try {
+                const eventStartDate = new Date("October 23, 2025 00:00:00").getTime();
+                const eventEndDate = new Date("November 13, 2025 23:59:59").getTime();
+                const countdownEl = document.getElementById('countdown');
+                const statusEl = document.getElementById('countdown-status');
 
-            const updateCountdown = setInterval(function() {
-                const now = new Date().getTime();
-                
-                if (now >= eventStartDate && now <= eventEndDate) {
-                    // EVENT IS ONGOING (Between Oct 23 and Nov 13, 2025)
-                    countdownEl.innerHTML = '<p class="text-4xl md:text-5xl text-red-500 font-extrabold tracking-wider">PORPROV SEDANG BERLANGSUNG!</p>';
-                    statusEl.textContent = 'Ayo dukung atlet Tapin!';
-                    return;
+                const updateCountdown = setInterval(function() {
+                    const now = new Date().getTime(); 
+                    
+                    // KARENA HARI INI 30 OKTOBER 2025, ACARA SEDANG BERLANGSUNG
+                    if (now >= eventStartDate && now <= eventEndDate) {
+                        countdownEl.innerHTML = '<p class="text-3xl md:text-4xl text-red-500 font-extrabold tracking-wider">PORPROV SEDANG BERLANGSUNG!</p>';
+                        statusEl.textContent = 'Ayo dukung atlet Tapin!';
+                        // Hentikan interval setelah status disetel (opsional, tapi lebih efisien)
+                        // clearInterval(updateCountdown); 
+                        return;
 
-                } else if (now > eventEndDate) {
-                    // Event is finished
-                    clearInterval(updateCountdown);
-                    countdownEl.innerHTML = '<p class="text-4xl text-yellow-500 font-extrabold">PORPROV TELAH USAI</p>';
-                    statusEl.textContent = 'Selamat kepada para juara!';
-                    return;
-                }
-                
-                // Pre-event countdown (If the actual date was before Oct 23, 2025)
-                const distance = eventStartDate - now;
-                
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    } else if (now > eventEndDate) {
+                        // Acara selesai
+                        clearInterval(updateCountdown);
+                        countdownEl.innerHTML = '<p class="text-4xl text-yellow-500 font-extrabold">PORPROV TELAH USAI</p>';
+                        statusEl.textContent = 'Selamat kepada para juara!';
+                        return;
+                    }
+                    
+                    // Kode ini hanya berjalan jika tanggal SEBELUM 23 Oktober 2025
+                    const distance = eventStartDate - now;
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                const format = (num) => String(num).padStart(2, '0');
+                    const format = (num) => String(num).padStart(2, '0');
 
-                countdownEl.innerHTML = `
-                    <div class="countdown-tile p-4 w-20 md:w-32 rounded-lg">
-                        <p class="text-4xl md:text-5xl font-extrabold text-yellow-500">${format(days)}</p>
-                        <p class="text-xs md:text-sm uppercase tracking-wider text-slate-400 mt-1">Hari</p>
-                    </div>
-                    <span class="text-4xl text-yellow-600">:</span>
-                    <div class="countdown-tile p-4 w-20 md:w-32 rounded-lg">
-                        <p class="text-4xl md:text-5xl font-extrabold text-yellow-500">${format(hours)}</p>
-                        <p class="text-xs md:text-sm uppercase tracking-wider text-slate-400 mt-1">Jam</p>
-                    </div>
-                    <span class="text-4xl text-yellow-600">:</span>
-                    <div class="countdown-tile p-4 w-20 md:w-32 rounded-lg">
-                        <p class="text-4xl md:text-5xl font-extrabold text-yellow-500">${format(minutes)}</p>
-                        <p class="text-xs md:text-sm uppercase tracking-wider text-slate-400 mt-1">Menit</p>
-                    </div>
-                    <span class="text-4xl text-yellow-600">:</span>
-                    <div class="countdown-tile p-4 w-20 md:w-32 rounded-lg">
-                        <p class="text-4xl md:text-5xl font-extrabold text-yellow-500">${format(seconds)}</p>
-                        <p class="text-xs md:text-sm uppercase tracking-wider text-slate-400 mt-1">Detik</p>
-                    </div>
-                `;
-                statusEl.textContent = 'Menuju pembukaan resmi';
+                    countdownEl.innerHTML = `
+                        <div class="countdown-tile p-4 w-20 md:w-32 rounded-lg">
+                            <p class="text-4xl md:text-5xl font-extrabold text-yellow-500">${format(days)}</p>
+                            <p class="text-xs md:text-sm uppercase tracking-wider text-slate-400 mt-1">Hari</p>
+                        </div>
+                        <span class="text-4xl text-yellow-600">:</span>
+                        <div class="countdown-tile p-4 w-20 md:w-32 rounded-lg">
+                            <p class="text-4xl md:text-5xl font-extrabold text-yellow-500">${format(hours)}</p>
+                            <p class="text-xs md:text-sm uppercase tracking-wider text-slate-400 mt-1">Jam</p>
+                        </div>
+                        <span class="text-4xl text-yellow-600">:</span>
+                        <div class="countdown-tile p-4 w-20 md:w-32 rounded-lg">
+                            <p class="text-4xl md:text-5xl font-extrabold text-yellow-500">${format(minutes)}</p>
+                            <p class="text-xs md:text-sm uppercase tracking-wider text-slate-400 mt-1">Menit</p>
+                        </div>
+                        <span class="text-4xl text-yellow-600">:</span>
+                        <div class="countdown-tile p-4 w-20 md:w-32 rounded-lg">
+                            <p class="text-4xl md:text-5xl font-extrabold text-yellow-500">${format(seconds)}</p>
+                            <p class="text-xs md:text-sm uppercase tracking-wider text-slate-400 mt-1">Detik</p>
+                        </div>
+                    `;
+                    statusEl.textContent = 'Menuju pembukaan resmi';
 
-            }, 1000);
+                }, 1000);
+            } catch (e) {
+                 console.error("Error starting countdown:", e);
+                 document.getElementById('countdown').innerHTML = '<p class="p-4 text-center text-red-500">Gagal memuat status acara.</p>';
+            }
         }
 
         // Mobile Menu Toggle
         function setupMobileMenu() {
-            const button = document.getElementById('mobile-menu-button');
-            const menu = document.getElementById('mobile-menu');
+            try {
+                const button = document.getElementById('mobile-menu-button');
+                const menu = document.getElementById('mobile-menu');
 
-            button.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
-
-            // Close menu when a link is clicked
-            menu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    menu.classList.add('hidden');
+                button.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
                 });
-            });
+
+                // Close menu when a link is clicked
+                menu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menu.classList.add('hidden');
+                    });
+                });
+            } catch(e) {
+                console.error("Error setting up mobile menu:", e);
+            }
         }
 
 
         // --- INITIALIZATION ---
         window.onload = function() {
-            renderStandings();
-            renderAthleteAchievements();
-            renderCaborAchievements();
-            startCountdown();
-            setupMobileMenu();
+            // Menggunakan try-catch untuk setiap pemanggilan agar jika satu gagal, yang lain tetap jalan
+            try { renderStandings(); } catch (e) { console.error("Failed renderStandings:", e); }
+            try { renderAthleteAchievements(); } catch (e) { console.error("Failed renderAthleteAchievements:", e); }
+            try { renderCaborAchievements(); } catch (e) { console.error("Failed renderCaborAchievements:", e); }
+            try { renderSchedule(); } catch (e) { console.error("Failed renderSchedule:", e); }
+            try { startCountdown(); } catch (e) { console.error("Failed startCountdown:", e); }
+            try { setupMobileMenu(); } catch (e) { console.error("Failed setupMobileMenu:", e); }
         };
     </script>
 </body>
 </html>
+
+
